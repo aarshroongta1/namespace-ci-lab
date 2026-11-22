@@ -1,0 +1,70 @@
+name: Vite CI cache experiment
+run-name: '${{ inputs.provider }} / ${{ inputs.phase }} / ${{ inputs.cohort }}'
+on:
+  workflow_dispatch:
+    inputs:
+      provider:
+        type: choice
+        options: [github, namespace]
+        required: true
+      phase:
+        type: choice
+        options: [cold, warm, edited]
+        required: true
+      cohort:
+        description: Fresh identifier for an independent cache population
+        default: sitting-1
+        required: true
+      namespace_runner:
+        description: Namespace profile label with cache volume enabled
+        default: namespace-profile-vite-ci-lab
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: vite-ci-lab-${{ inputs.provider }}-${{ inputs.cohort }}
+  cancel-in-progress: false
+jobs:
+  ci:
+    runs-on: ${{ inputs.provider == 'github' && 'ubuntu-24.04' || inputs.namespace_runner }}
+    timeout-minutes: 12
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      NODE_OPTIONS: --max-old-space-size=6144
+      CI: 'true'
+      PHASE: ${{ inputs.phase }}
+      PROVIDER: ${{ inputs.provider }}
+      RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: vitejs/vite
+          ref: 3567471998e3da315675086f44368e266c9c0e33
+          path: upstream
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Install pinned package manager
+        run: npm install --global pnpm@12.21.0
+      - name: Restore GitHub dependency store
+        if: inputs.provider == 'github'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: cache-store
+          key: vite-pnpm-${{ inputs.cohort }}-${{ hashFiles('upstream/pnpm-lock.yaml') }}
+      - name: Attach Namespace dependency store
+        if: inputs.provider == 'namespace'
+        uses: namespacelabs/nscloud-cache-action@1124a6f3ce44e5cf84cc22111530961f4d2a15f9
+        with:
+          path: cache-store
+      - name: Measure install, build, and upstream unit tests
+        run: python3 scripts/measure.py
+      - name: Preserve raw evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ${{ inputs.provider }}-${{ inputs.phase }}-${{ github.run_id }}
+          path: results/
+          retention-days: 90
