@@ -1,0 +1,19 @@
+scripts/plot_pandas.py
+  s_8e27fbea316f4b::t_24b1e46d243714 1-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e211b7b7b62a7190321afcb348f044b8f78ea2e9",
+  "prompts": {},
+  "sessions": {
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
