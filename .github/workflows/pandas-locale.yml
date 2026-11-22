@@ -1,0 +1,80 @@
+name: pandas locale verification
+run-name: pandas locale fix verification
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ci:
+    name: ${{ matrix.variant }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: github
+            runner: ubuntu-24.04
+            cache: archive
+          - variant: namespace-default
+            runner: namespace-profile-ci-lab
+            cache: archive
+          - variant: namespace-fixed
+            runner: namespace-profile-ci-lab
+            cache: archive
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    env:
+      PHASE: edited
+      PROVIDER: ${{ matrix.variant }}
+      COHORT: pandas-3
+      RESULTS_DIRECTORY: results/locale-verification/${{ matrix.variant }}
+      RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      PIXI_CACHE_DIR: ${{ github.workspace }}/pandas-cache/pandas-3/pixi
+      CCACHE_DIR: ${{ github.workspace }}/pandas-cache/pandas-3/ccache
+      CCACHE_BASEDIR: ${{ github.workspace }}/upstream-pandas
+      CCACHE_MAXSIZE: 2G
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: pandas-dev/pandas
+          ref: 717bcd3eda554a0b2e826889f9e30efbd88f00cd
+          path: upstream-pandas
+          fetch-depth: 0
+          fetch-tags: true
+          persist-credentials: false
+      - name: Install compiler cache
+        run: sudo apt-get update -qq && sudo apt-get install -y ccache
+      - uses: prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e
+        with:
+          pixi-version: v0.82.1
+          run-install: false
+          cache: false
+      - name: Restore existing cache archive
+        if: matrix.cache == 'archive'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: pandas-cache/pandas-3
+          fail-on-cache-miss: true
+          key: pandas-pandas-3-${{ hashFiles('upstream-pandas/pixi.lock') }}
+      - name: Attach Namespace Cache Volume
+        if: matrix.cache == 'volume'
+        uses: namespacelabs/nscloud-cache-action@1124a6f3ce44e5cf84cc22111530961f4d2a15f9
+        with:
+          path: pandas-cache/pandas-3
+          fail-on-cache-miss: true
+      - name: Build pandas and run groupby checks
+        shell: bash
+        run: |
+          if [ "${{ matrix.variant }}" = "namespace-fixed" ]; then
+            env -u LC_ALL python3 scripts/measure_pandas.py
+          else
+            python3 scripts/measure_pandas.py
+          fi
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: locale-verification-${{ matrix.variant }}-${{ github.run_id }}
+          path: results/locale-verification/${{ matrix.variant }}/
