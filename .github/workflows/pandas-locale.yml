@@ -72,6 +72,9 @@ jobs:
           else
             python3 scripts/measure_pandas.py
           fi
+      - name: Verify the locale fix restores compiler-cache hits
+        if: matrix.variant == 'namespace-fixed'
+        run: python3 scripts/assert_compiler_reuse.py results/locale-verification/namespace-fixed/namespace-fixed-edited-ccache.log
       - name: Preserve evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
