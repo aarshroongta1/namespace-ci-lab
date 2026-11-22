@@ -1,0 +1,19 @@
+scripts/summarize.py
+  s_8e27fbea316f4b::t_83ebabe46f3d84 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "36cdc8e346b599720da0894db67749c0394ca52a",
+  "prompts": {},
+  "sessions": {
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
