@@ -1,0 +1,21 @@
+.github/workflows/pandas.yml
+  s_8e27fbea316f4b::t_dd827c75dd6a14 62,76
+scripts/measure_pandas.py
+  s_8e27fbea316f4b::t_dd827c75dd6a14 48-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c99edeece569e1d0543f9b8b5584c463142d000f",
+  "prompts": {},
+  "sessions": {
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
