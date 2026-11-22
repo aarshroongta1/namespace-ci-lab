@@ -1,0 +1,19 @@
+README.md
+  s_6cd6e415f326a5::t_6ef0005d6e8f04 1,3,5,7,9,11,13,15-19,21,23,25,27,29-44,48-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "14d05bca2435263e8307b443ed6cbf1c3d10db0a",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
