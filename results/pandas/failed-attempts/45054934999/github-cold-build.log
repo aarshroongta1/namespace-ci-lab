@@ -1,0 +1,62 @@
+Using pip 26.2.2 from /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/lib/python3.12/site-packages/pip (python 3.12)
+Obtaining file:///home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas
+  Checking if build backend supports build_editable: started
+  Running command Checking if build backend supports build_editable
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Running command Preparing editable metadata (pyproject.toml)
+  + meson setup /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312 -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --native-file=/home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312/meson-python-native-file.ini
+  The Meson build system
+  Version: 1.12.1
+  Source dir: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas
+  Build dir: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312
+  Build type: native build
+  Program python found: YES
+  Project name: pandas
+  Project version: 0+untagged.1.g717bcd3
+
+  ../../meson.build:2:0: ERROR: Compiler cache specified without compiler: ccache
+
+  A full log can be found at /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312/meson-logs/meson-log.txt
+  ::group::==== CI platform detected, click here for meson-log.txt contents. ====
+  Build started at 2026-11-22T18:25:29.885086
+  Main binary: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/python3.12
+  Build Options: -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --native-file=/home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312/meson-python-native-file.ini
+  Python system: Linux
+  The Meson build system
+  Version: 1.12.1
+  Source dir: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas
+  Build dir: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312
+  Build type: native build
+  Program python found: YES
+  Running command: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/python generate_version.py --print
+  --- stdout ---
+  0+untagged.1.g717bcd3
+
+  --- stderr ---
+
+
+  Project name: pandas
+  Project version: 0+untagged.1.g717bcd3
+
+  ../../meson.build:2:0: ERROR: Compiler cache specified without compiler: ccache
+
+  ::endgroup::
+
+  error: subprocess-exited-with-error
+  
+  × Preparing editable metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> No available output.
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  full command: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/python /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py prepare_metadata_for_build_editable /tmp/tmpte2qdrpx
+  cwd: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas
+  Preparing editable metadata (pyproject.toml): finished with status 'error'
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> from file:///home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

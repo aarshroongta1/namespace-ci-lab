@@ -1,0 +1,28 @@
+ImportError while loading conftest '/home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/conftest.py'.
+pandas/conftest.py:633: in <module>
+    "string": Index([f"pandas_{i}" for i in range(10)], dtype="str"),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pandas/core/indexes/base.py:602: in __new__
+    arr = sanitize_array(data, None, dtype=dtype, copy=bool(copy))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pandas/core/construction.py:728: in sanitize_array
+    subarr = cls._from_sequence(data, dtype=dtype, copy=copy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pandas/core/arrays/string_arrow.py:291: in _from_sequence
+    pa_arr = pa.array(result, type=pa.large_string(), from_pandas=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyarrow/array.pxi:289: in pyarrow.lib.array
+    values = get_values(obj, &is_pandas_object)
+pyarrow/array.pxi:4957: in pyarrow.lib.get_values
+    if pandas_api.is_series(obj) or pandas_api.is_index(obj):
+pyarrow/pandas-shim.pxi:250: in pyarrow.lib._PandasAPIShim.is_series
+    if self._have_pandas_internal():
+pyarrow/pandas-shim.pxi:128: in pyarrow.lib._PandasAPIShim._have_pandas_internal
+    self._check_import(raise_=False)
+pyarrow/pandas-shim.pxi:107: in pyarrow.lib._PandasAPIShim._check_import
+    with self._lock:
+pyarrow/pandas-shim.pxi:110: in pyarrow.lib._PandasAPIShim._check_import
+    self._import_pandas(raise_)
+pyarrow/pandas-shim.pxi:74: in pyarrow.lib._PandasAPIShim._import_pandas
+    warnings.warn(
+E   UserWarning: pyarrow requires pandas 1.0.0 or above, pandas 0+untagged.1.g717bcd3 is installed. Therefore, pandas-specific integration is not used.
