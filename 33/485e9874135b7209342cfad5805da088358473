@@ -1,0 +1,155 @@
+results/cache-diagnosis/namespace-debug/namespace-debug-edited-ccache.log
+  s_6cd6e415f326a5::t_edace361815ff9 1-21
+results/cache-diagnosis/github-debug/github-debug-edited.json
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-30
+results/locale-verification/namespace-default/namespace-default-edited-unit.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-33
+results/locale-verification/namespace-default/namespace-default-edited-environment.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1
+results/locale-verification/namespace-default/namespace-default-edited-ccache.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-21
+results/locale-verification/namespace-default/namespace-default-edited-versions.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-401
+results/locale-verification/github/github-edited-ccache.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-21
+results/locale-verification/namespace-fixed/namespace-fixed-edited-ccache.log
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1-21
+results/locale-verification/jobs.json
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-438
+results/cache-diagnosis/namespace-debug/header-hashes.json
+  s_6cd6e415f326a5::t_edace361815ff9 1-268
+results/cache-diagnosis/namespace-debug/namespace-debug-edited-unit.log
+  s_6cd6e415f326a5::t_edace361815ff9 1-36
+results/cache-diagnosis/namespace-debug/namespace-debug-edited.json
+  s_6cd6e415f326a5::t_edace361815ff9 1-30
+results/cache-diagnosis/github-debug/github-debug-edited-junit.xml
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1
+results/cache-diagnosis/github-debug/github-debug-edited-build.log
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-253
+results/locale-verification/namespace-default/namespace-default-edited-build.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-253
+results/locale-verification/namespace-default/namespace-default-edited.patch
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-20
+results/locale-verification/github/github-edited-unit.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-36
+results/cache-diagnosis/namespace-debug/ccache-config.txt
+  s_6cd6e415f326a5::t_edace361815ff9 1-44
+demo/verification.json
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-80
+results/cache-diagnosis/github-debug/base.ccache-input-text
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-62
+results/cache-diagnosis/namespace-debug/namespace-debug-edited.patch
+  s_6cd6e415f326a5::t_edace361815ff9 1-20
+results/cache-diagnosis/github-debug/github-debug-edited-environment.log
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1
+results/locale-verification/github/github-edited-build.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-253
+results/locale-verification/namespace-default/namespace-default-edited-junit.xml
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1
+results/cache-diagnosis/namespace-debug/base.ccache-input-text
+  s_6cd6e415f326a5::t_edace361815ff9 1-28195
+results/locale-verification/github/github-edited.patch
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-20
+results/cache-diagnosis/github-debug/github-debug-edited-unit.log
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-36
+results/locale-verification/github/github-edited-junit.xml
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1
+results/cache-diagnosis/namespace-debug/namespace-debug-edited-environment.log
+  s_6cd6e415f326a5::t_edace361815ff9 1
+results/cache-diagnosis/github-debug/header-hashes.json
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-268
+results/locale-verification/namespace-fixed/namespace-fixed-edited-environment.log
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1
+results/cache-diagnosis/namespace-debug/hardware.json
+  s_6cd6e415f326a5::t_edace361815ff9 1-5
+results/locale-verification/namespace-fixed/namespace-fixed-edited-versions.log
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1-401
+results/locale-verification/github/github-edited-versions.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-401
+results/cache-diagnosis/github-debug/hardware.json
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-5
+results/locale-verification/namespace-default/namespace-default-edited.json
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-30
+results/locale-verification/workflow.json
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-224
+results/cache-diagnosis/namespace-debug/ccache-decisions.log
+  s_6cd6e415f326a5::t_edace361815ff9 1-6930
+results/cache-diagnosis/comparison.txt
+  s_6cd6e415f326a5::t_edace361815ff9 1-241
+results/cache-diagnosis/namespace-debug/namespace-debug-edited-junit.xml
+  s_6cd6e415f326a5::t_edace361815ff9 1
+results/cache-diagnosis/github-debug/github-debug-edited.patch
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-20
+results/locale-verification/namespace-fixed/namespace-fixed-edited.json
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1-30
+results/cache-diagnosis/namespace-debug/namespace-debug-edited-build.log
+  s_6cd6e415f326a5::t_edace361815ff9 1-253
+results/cache-diagnosis/github-debug/github-debug-edited-versions.log
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-401
+results/cache-diagnosis/github-debug/github-debug-edited-ccache.log
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-21
+results/locale-verification/namespace-fixed/namespace-fixed-edited-junit.xml
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1
+results/locale-verification/namespace-fixed/namespace-fixed-edited-build.log
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1-253
+results/locale-verification/namespace-fixed/namespace-fixed-edited.patch
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1-20
+results/cache-diagnosis/namespace-debug/namespace-debug-edited-versions.log
+  s_6cd6e415f326a5::t_edace361815ff9 1-401
+results/locale-verification/namespace-fixed/namespace-fixed-edited-unit.log
+  s_6cd6e415f326a5::t_3e8b046be8fa4a 1-29
+results/cache-diagnosis/github-debug/ccache-decisions.log
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-20430
+LOCALE_RESULTS.md
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-11
+results/cache-diagnosis/github-debug/ccache-config.txt
+  s_8e27fbea316f4b::t_e5bc7ca4c09af8 1-44
+results/locale-verification/github/github-edited-environment.log
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1
+results/locale-verification/github/github-edited.json
+  s_6cd6e415f326a5::t_49d08bb8a9e0a4 1-30
+INVESTIGATION.md
+  s_6cd6e415f326a5::t_460c8a80d8a3fb 1-55
+MIGRATION_RESULTS.md
+  s_6cd6e415f326a5::t_c38b503e76f6cf 12-13
+OUTREACH.md
+  s_6cd6e415f326a5::t_36f319440bcc17 1,3,5,7
+README.md
+  s_6cd6e415f326a5::t_deb49b5afb8faf 1,5,7-11,13,15,17,19,21-23,25,27,29-40,44,46,48,50,52
+demo/README.md
+  s_6cd6e415f326a5::t_46ec7aaacd007c 12-13
+demo/app.js
+  s_6cd6e415f326a5::t_b61949233ebfd9 9,14-15,46,56
+demo/index.html
+  s_6cd6e415f326a5::t_b014cb6d1a67ad 5-6,10,12,23-26,28
+demo/styles.css
+  s_6cd6e415f326a5::t_ec405fab0b044c 10-11
+results/cache-diagnosis/jobs.json
+  s_8e27fbea316f4b::t_d57f3364b0e75f 1-293
+results/cache-diagnosis/workflow.json
+  s_6cd6e415f326a5::t_ce4066db1b3d6b 1-224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "33485e9874135b7209342cfad5805da088358473",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    },
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
