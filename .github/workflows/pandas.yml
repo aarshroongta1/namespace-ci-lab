@@ -59,6 +59,7 @@ jobs:
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
           path: pandas-cache/${{ inputs.cohort }}
+          fail-on-cache-miss: ${{ inputs.phase != 'cold' }}
           key: pandas-${{ inputs.cohort }}-${{ hashFiles('upstream-pandas/pixi.lock') }}
       - name: Attach Namespace caches
         if: inputs.provider == 'namespace'
@@ -72,5 +73,5 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: pandas-${{ inputs.provider }}-${{ inputs.phase }}-${{ github.run_id }}
-          path: results/pandas/
+          path: results/pandas/${{ inputs.provider }}-${{ inputs.phase }}*
           retention-days: 90

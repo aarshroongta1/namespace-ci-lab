@@ -45,6 +45,8 @@ subprocess.run(['ccache', '--zero-stats'], check=True)
 try:
     if phase == 'cold' and record['cache_files_before']:
         raise RuntimeError('Cold trial found existing cached files. Use a fresh cohort.')
+    if phase != 'cold' and not record['cache_files_before']:
+        raise RuntimeError('Requested a warm cache, but found no cached files.')
     for name, command in commands:
         start = time.monotonic()
         log = out / f'{prefix}-{name}.log'
