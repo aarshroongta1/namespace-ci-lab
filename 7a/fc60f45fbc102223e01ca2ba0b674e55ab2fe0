@@ -1,0 +1,98 @@
+demo/README.md
+  s_6cd6e415f326a5::t_e74f7b67308cc6 10-11
+demo/app.js
+  s_8e27fbea316f4b::t_d44915721a7108 2-11,13-15,17-22,24-25,28-31,35-42,44,46-52,56
+demo/index.html
+  s_8e27fbea316f4b::t_d44915721a7108 5-6,10,12,14,16-17,19-20,23-25,27
+scripts/collect_migration.py
+  s_8e27fbea316f4b::t_cd4aed2c56f7c0 1-47,49-75,78,81-82
+  s_6cd6e415f326a5::t_e74f7b67308cc6 76-77,79-80
+  s_6cd6e415f326a5::t_f4a56999cd2f7e 48
+README.md
+  s_6cd6e415f326a5::t_e74f7b67308cc6 3-5
+OUTREACH.md
+  s_6cd6e415f326a5::t_e74f7b67308cc6 1,3,5
+demo/styles.css
+  s_8e27fbea316f4b::t_d44915721a7108 6-9
+MIGRATION_RESULTS.md
+  s_6cd6e415f326a5::t_e74f7b67308cc6 5-11
+  s_6cd6e415f326a5::t_702bfac486e391 1-4
+demo/migration.json
+  s_6cd6e415f326a5::t_caff465710fe5c 1-80
+results/pandas-migration/github/github-edited-build.log
+  s_6cd6e415f326a5::t_2804ca69c3d818 1-253
+results/pandas-migration/github/github-edited-ccache.log
+  s_6cd6e415f326a5::t_fa4c33e00eb0ed 1-21
+results/pandas-migration/github/github-edited-environment.log
+  s_6cd6e415f326a5::t_ae702457f991c4 1
+results/pandas-migration/github/github-edited-junit.xml
+  s_6cd6e415f326a5::t_a6fd72fef95756 1
+results/pandas-migration/github/github-edited-unit.log
+  s_6cd6e415f326a5::t_ecc1bfd5f0d85e 1-36
+results/pandas-migration/github/github-edited-versions.log
+  s_6cd6e415f326a5::t_ba300a96e5accc 1-401
+results/pandas-migration/github/github-edited.json
+  s_6cd6e415f326a5::t_7f66d513d6d7ee 1-30
+results/pandas-migration/github/github-edited.patch
+  s_6cd6e415f326a5::t_43241abefd22ee 1-20
+results/pandas-migration/jobs.json
+  s_6cd6e415f326a5::t_c310d3b518a845 1-438
+results/pandas-migration/namespace-runner/namespace-runner-edited-build.log
+  s_6cd6e415f326a5::t_06383657ae275e 1-253
+results/pandas-migration/namespace-runner/namespace-runner-edited-ccache.log
+  s_6cd6e415f326a5::t_8839ee01d59573 1-21
+results/pandas-migration/namespace-runner/namespace-runner-edited-environment.log
+  s_6cd6e415f326a5::t_f81db58dded711 1
+results/pandas-migration/namespace-runner/namespace-runner-edited-junit.xml
+  s_6cd6e415f326a5::t_1a5b204ee7655c 1
+results/pandas-migration/namespace-runner/namespace-runner-edited-unit.log
+  s_6cd6e415f326a5::t_d29655d9223bb9 1-36
+results/pandas-migration/namespace-runner/namespace-runner-edited-versions.log
+  s_6cd6e415f326a5::t_fec0568f352302 1-401
+results/pandas-migration/namespace-runner/namespace-runner-edited.json
+  s_6cd6e415f326a5::t_1f9af893de86c9 1-30
+results/pandas-migration/namespace-runner/namespace-runner-edited.patch
+  s_6cd6e415f326a5::t_583b8b31f45715 1-20
+results/pandas-migration/namespace-volume/namespace-volume-edited-build.log
+  s_6cd6e415f326a5::t_1f8bb7e2c92bac 1-253
+results/pandas-migration/namespace-volume/namespace-volume-edited-ccache.log
+  s_6cd6e415f326a5::t_2684cd6bd07b42 1-21
+results/pandas-migration/namespace-volume/namespace-volume-edited-environment.log
+  s_6cd6e415f326a5::t_33cdca12eed23e 1
+results/pandas-migration/namespace-volume/namespace-volume-edited-junit.xml
+  s_6cd6e415f326a5::t_b9f1923b40e85d 1
+results/pandas-migration/namespace-volume/namespace-volume-edited-unit.log
+  s_6cd6e415f326a5::t_805d2f9756ce0f 1-36
+results/pandas-migration/namespace-volume/namespace-volume-edited-versions.log
+  s_6cd6e415f326a5::t_827af9318eeccd 1-401
+results/pandas-migration/namespace-volume/namespace-volume-edited.json
+  s_6cd6e415f326a5::t_a0edad2d9757dd 1-30
+results/pandas-migration/namespace-volume/namespace-volume-edited.patch
+  s_6cd6e415f326a5::t_92c7c09f7768e3 1-20
+results/pandas-migration/workflow.json
+  s_6cd6e415f326a5::t_a660ed8baae3da 1-224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7afc60f45fbc102223e01ca2ba0b674e55ab2fe0",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    },
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
