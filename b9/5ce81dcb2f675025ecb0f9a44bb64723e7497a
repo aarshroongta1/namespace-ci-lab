@@ -1,0 +1,27 @@
+results/github-cold-unit.log
+  s_6cd6e415f326a5::t_1dddc198f2dfd6 1-134
+results/github-cold-install.log
+  s_6cd6e415f326a5::t_1dddc198f2dfd6 1-66
+results/github-cold.json
+  s_6cd6e415f326a5::t_1dddc198f2dfd6 1-29
+RESULTS.md
+  s_6cd6e415f326a5::t_1dddc198f2dfd6 1-7
+results/github-cold-build.log
+  s_6cd6e415f326a5::t_1dddc198f2dfd6 1-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b95ce81dcb2f675025ecb0f9a44bb64723e7497a",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
