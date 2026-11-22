@@ -31,7 +31,9 @@ record = dict(project='pandas', provider=provider, phase=phase,
 commands = [
     ('environment', ['pixi', 'install', '--locked', '-e', 'py312']),
     ('build', ['pixi', 'run', '--locked', '-e', 'py312', 'bash', '-c',
-               'export CC="ccache $CC" CXX="ccache $CXX"; '
+               'export CC="ccache $(command -v x86_64-conda-linux-gnu-cc || command -v gcc)" '
+               'CXX="ccache $(command -v x86_64-conda-linux-gnu-c++ || command -v g++)"; '
+               'echo "CC=$CC CXX=$CXX"; '
                'python -m pip install --verbose --editable . --no-build-isolation --no-deps '
                '--config-settings builddir=build/py312 --config-settings compile-args=-j2']),
     ('unit', ['pixi', 'run', '--locked', '-e', 'py312', 'python', '-m', 'pytest',

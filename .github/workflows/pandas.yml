@@ -15,7 +15,7 @@ on:
         default: pandas-1
         required: true
       namespace_runner:
-        default: namespace-profile-vite-ci-lab
+        default: namespace-profile-ci-lab
         required: true
 permissions:
   contents: read
