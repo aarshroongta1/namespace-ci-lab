@@ -1,0 +1,253 @@
+CC=ccache /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-cc CXX=ccache /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-c++
+Using pip 26.2.2 from /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/lib/python3.12/site-packages/pip (python 3.12)
+Obtaining file:///home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas
+  Checking if build backend supports build_editable: started
+  Running command Checking if build backend supports build_editable
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Running command Preparing editable metadata (pyproject.toml)
+  + meson setup /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312 -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --native-file=/home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312/meson-python-native-file.ini
+  The Meson build system
+  Version: 1.12.1
+  Source dir: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas
+  Build dir: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312
+  Build type: native build
+  Program python found: YES
+  Project name: pandas
+  Project version: 3.2.0.dev0+737.g717bcd3eda.dirty
+  C compiler for the host machine: /usr/bin/ccache /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-cc (gcc 15.3.0 "x86_64-conda-linux-gnu-cc (conda-forge gcc 15.3.0-7) 15.3.0")
+  C linker for the host machine: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-cc ld.bfd 2.46.1
+  C++ compiler for the host machine: /usr/bin/ccache /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-c++ (gcc 15.3.0 "x86_64-conda-linux-gnu-c++ (conda-forge gcc 15.3.0-7) 15.3.0")
+  C++ linker for the host machine: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-c++ ld.bfd 2.46.1
+  Cython compiler for the host machine: cython (cython 3.3.1)
+  Host machine cpu family: x86_64
+  Host machine cpu: x86_64
+  Program python found: YES (/home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/python)
+  Found pkg-config: YES (/home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/pkg-config) 0.29.2
+  Run-time dependency python found: YES 3.12
+  Library m found: YES
+  Downloading fast_float source from https://github.com/fastfloat/fast_float/archive/refs/tags/v8.2.10.tar.gz
+
+  Executing subproject fast_float for machine: host
+
+  fast_float| Project name: fast_float
+  fast_float| Project version: 8.2.10
+  fast_float| C++ compiler for the host machine: /usr/bin/ccache /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-c++ (gcc 15.3.0 "x86_64-conda-linux-gnu-c++ (conda-forge gcc 15.3.0-7) 15.3.0")
+  fast_float| C++ linker for the host machine: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-c++ ld.bfd 2.46.1
+  fast_float| Build targets in project: 12
+  fast_float| Subproject fast_float finished.
+
+  Found CMake: /usr/local/bin/cmake (3.31.6)
+  Run-time dependency xsimd found: NO  (tried pkg-config and cmake)
+  Looking for a fallback subproject for the dependency xsimd
+  Downloading xsimd source from https://github.com/xtensor-stack/xsimd/archive/refs/tags/14.2.0.tar.gz
+
+  Executing subproject xsimd for machine: host
+
+  xsimd| Project name: xsimd
+  xsimd| Project version: 14.2.0
+  xsimd| C++ compiler for the host machine: /usr/bin/ccache /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-c++ (gcc 15.3.0 "x86_64-conda-linux-gnu-c++ (conda-forge gcc 15.3.0-7) 15.3.0")
+  xsimd| C++ linker for the host machine: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/x86_64-conda-linux-gnu-c++ ld.bfd 2.46.1
+  xsimd| Build targets in project: 12
+  xsimd| Subproject xsimd finished.
+
+  Dependency xsimd for host machine found: YES 14.2.0 (overridden)
+  Configuring pandas_simd_config.h using configuration
+  Run-time dependency python found: YES 3.12
+  Build targets in project: 58
+
+  pandas 3.2.0.dev0+737.g717bcd3eda.dirty
+
+    Subprojects (for host machine)
+      fast_float  : YES
+      xsimd       : YES
+
+    User defined options
+      Native files: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/build/py312/meson-python-native-file.ini
+      b_ndebug    : if-release
+      b_vscrt     : md
+      buildtype   : release
+
+  Found ninja-1.13.2 at /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/ninja
+  + /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/bin/ninja -j2
+  [1/156] Generating pandas/_libs/algos_common_helper_pxi with a custom command
+  [2/156] Generating pandas/_libs/algos_take_helper_pxi with a custom command
+  [3/156] Generating pandas/_libs/khash_primitive_helper_pxi with a custom command
+  [4/156] Generating pandas/_libs/hashtable_class_helper_pxi with a custom command
+  [5/156] Generating pandas/_libs/hashtable_func_helper_pxi with a custom command
+  [6/156] Generating pandas/_libs/index_class_helper_pxi with a custom command
+  [7/156] Generating pandas/_libs/intervaltree_helper_pxi with a custom command
+  [8/156] Generating pandas/_libs/sparse_op_helper_pxi with a custom command
+  [9/156] Compiling C++ object pandas/_libs/simd/libmoments_sse2.a.p/moments_sse2.cpp.o
+  [10/156] Compiling C++ object pandas/_libs/libpandas_tokenizer.a.p/src_parser_fast_float_wrappers.cpp.o
+  [11/156] Compiling C++ object pandas/_libs/libpandas_tokenizer.a.p/src_parser_tokenizer.cpp.o
+  [12/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/base.pyx
+  [13/156] Generating _cyutility.c with a custom command
+  [14/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/ccalendar.pyx
+  [15/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/dtypes.pyx
+  [16/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/conversion.pyx
+  [17/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/fields.pyx
+  [18/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/nattype.pyx
+  [19/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/np_datetime.pyx
+  [20/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/parsing.pyx
+  [21/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/offsets.pyx
+  [22/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/period.pyx
+  [23/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/strptime.pyx
+  [24/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/timedeltas.pyx
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/timedeltas.pyx:1995:12: Python attribute access is not usefully protected by critical_section
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/timedeltas.pyx:1996:12: Python attribute access is not usefully protected by critical_section
+  [25/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/timestamps.pyx
+  [26/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/timezones.pyx
+  [27/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/tzconversion.pyx
+  [28/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslibs/vectorized.pyx
+  [29/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/arrays.pyx
+  [30/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/groupby.pyx
+  [31/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/algos.pyx
+  [32/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/hashing.pyx
+  [33/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/index.pyx
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/index.pyx:284:16: Python attribute access is not usefully protected by critical_section
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/index.pyx:355:19: Python attribute access is not usefully protected by critical_section
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/index.pyx:358:19: Python attribute access is not usefully protected by critical_section
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/index.pyx:362:19: Python attribute access is not usefully protected by critical_section
+  [34/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/indexing.pyx
+  [35/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/internals.pyx
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/internals.pyx:809:38: Python attribute access is not usefully protected by critical_section
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/internals.pyx:1029:16: Python attribute access is not usefully protected by critical_section
+  warning: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/internals.pyx:1047:23: Python attribute access is not usefully protected by critical_section
+  [36/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/hashtable.pyx
+  [37/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/interval.pyx
+  [38/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/join.pyx
+  [39/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/missing.pyx
+  [40/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/lib.pyx
+  [41/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/ops.pyx
+  [42/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/ops_dispatch.pyx
+  [43/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/parsers.pyx
+  [44/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/properties.pyx
+  [45/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/reshape.pyx
+  [46/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/sas.pyx
+  [47/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/byteswap.pyx
+  [48/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/tslib.pyx
+  [49/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/sparse.pyx
+  [50/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/testing.pyx
+  [51/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/writers.pyx
+  [52/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/window/aggregations.pyx
+  [53/156] Compiling C object _cyutility.cpython-312-x86_64-linux-gnu.so.p/meson-generated_..__cyutility.c.o
+  [54/156] Linking static target pandas/_libs/simd/libmoments_sse2.a
+  [55/156] Linking static target pandas/_libs/libpandas_tokenizer.a
+  [56/156] Compiling C object pandas/_libs/tslibs/base.cpython-312-x86_64-linux-gnu.so.p/meson-generated_base.pyx.c.o
+  [57/156] Compiling C object pandas/_libs/tslibs/ccalendar.cpython-312-x86_64-linux-gnu.so.p/meson-generated_ccalendar.pyx.c.o
+  [58/156] Compiling C object pandas/_libs/tslibs/dtypes.cpython-312-x86_64-linux-gnu.so.p/meson-generated_dtypes.pyx.c.o
+  [59/156] Compiling C object pandas/_libs/tslibs/conversion.cpython-312-x86_64-linux-gnu.so.p/meson-generated_conversion.pyx.c.o
+  [60/156] Compiling C object pandas/_libs/tslibs/fields.cpython-312-x86_64-linux-gnu.so.p/meson-generated_fields.pyx.c.o
+  [61/156] Compiling C object pandas/_libs/tslibs/nattype.cpython-312-x86_64-linux-gnu.so.p/meson-generated_nattype.pyx.c.o
+  [62/156] Compiling C object pandas/_libs/tslibs/np_datetime.cpython-312-x86_64-linux-gnu.so.p/meson-generated_np_datetime.pyx.c.o
+  [63/156] Compiling C object pandas/_libs/tslibs/offsets.cpython-312-x86_64-linux-gnu.so.p/meson-generated_offsets.pyx.c.o
+  [64/156] Compiling C object pandas/_libs/tslibs/parsing.cpython-312-x86_64-linux-gnu.so.p/meson-generated_parsing.pyx.c.o
+  [65/156] Compiling C object pandas/_libs/tslibs/period.cpython-312-x86_64-linux-gnu.so.p/meson-generated_period.pyx.c.o
+  [66/156] Compiling C object pandas/_libs/tslibs/strptime.cpython-312-x86_64-linux-gnu.so.p/meson-generated_strptime.pyx.c.o
+  [67/156] Compiling C object pandas/_libs/tslibs/timedeltas.cpython-312-x86_64-linux-gnu.so.p/meson-generated_timedeltas.pyx.c.o
+  [68/156] Compiling C object pandas/_libs/tslibs/timestamps.cpython-312-x86_64-linux-gnu.so.p/meson-generated_timestamps.pyx.c.o
+  [69/156] Compiling C object pandas/_libs/tslibs/timezones.cpython-312-x86_64-linux-gnu.so.p/meson-generated_timezones.pyx.c.o
+  [70/156] Compiling C object pandas/_libs/tslibs/tzconversion.cpython-312-x86_64-linux-gnu.so.p/meson-generated_tzconversion.pyx.c.o
+  [71/156] Compiling C object pandas/_libs/tslibs/vectorized.cpython-312-x86_64-linux-gnu.so.p/meson-generated_vectorized.pyx.c.o
+  [72/156] Compiling C object pandas/_libs/algos.cpython-312-x86_64-linux-gnu.so.p/meson-generated_algos.pyx.c.o
+  [73/156] Compiling C object pandas/_libs/arrays.cpython-312-x86_64-linux-gnu.so.p/meson-generated_arrays.pyx.c.o
+  [74/156] Compiling C object pandas/_libs/groupby.cpython-312-x86_64-linux-gnu.so.p/meson-generated_groupby.pyx.c.o
+  [75/156] Compiling C object pandas/_libs/hashing.cpython-312-x86_64-linux-gnu.so.p/meson-generated_hashing.pyx.c.o
+  [76/156] Compiling C object pandas/_libs/hashtable.cpython-312-x86_64-linux-gnu.so.p/meson-generated_hashtable.pyx.c.o
+  [77/156] Compiling C object pandas/_libs/index.cpython-312-x86_64-linux-gnu.so.p/meson-generated_index.pyx.c.o
+  [78/156] Compiling C object pandas/_libs/indexing.cpython-312-x86_64-linux-gnu.so.p/meson-generated_indexing.pyx.c.o
+  [79/156] Compiling C object pandas/_libs/internals.cpython-312-x86_64-linux-gnu.so.p/meson-generated_internals.pyx.c.o
+  [80/156] Compiling C object pandas/_libs/interval.cpython-312-x86_64-linux-gnu.so.p/meson-generated_interval.pyx.c.o
+  [81/156] Compiling C object pandas/_libs/join.cpython-312-x86_64-linux-gnu.so.p/meson-generated_join.pyx.c.o
+  [82/156] Compiling C object pandas/_libs/lib.cpython-312-x86_64-linux-gnu.so.p/meson-generated_lib.pyx.c.o
+  [83/156] Compiling C object pandas/_libs/missing.cpython-312-x86_64-linux-gnu.so.p/meson-generated_missing.pyx.c.o
+  [84/156] Compiling C object pandas/_libs/pandas_datetime.cpython-312-x86_64-linux-gnu.so.p/src_vendored_numpy_datetime_np_datetime.c.o
+  [85/156] Compiling C object pandas/_libs/pandas_datetime.cpython-312-x86_64-linux-gnu.so.p/src_vendored_numpy_datetime_np_datetime_strings.c.o
+  [86/156] Compiling C object pandas/_libs/pandas_datetime.cpython-312-x86_64-linux-gnu.so.p/src_datetime_date_conversions.c.o
+  [87/156] Compiling C object pandas/_libs/pandas_datetime.cpython-312-x86_64-linux-gnu.so.p/src_datetime_pd_datetime.c.o
+  [88/156] Compiling C object pandas/_libs/pandas_parser.cpython-312-x86_64-linux-gnu.so.p/src_parser_io.c.o
+  [89/156] Compiling C object pandas/_libs/pandas_parser.cpython-312-x86_64-linux-gnu.so.p/src_parser_pd_parser.c.o
+  [90/156] Compiling C object pandas/_libs/parsers.cpython-312-x86_64-linux-gnu.so.p/meson-generated_parsers.pyx.c.o
+  [91/156] Compiling C object pandas/_libs/parsers.cpython-312-x86_64-linux-gnu.so.p/src_parser_io.c.o
+  [92/156] Compiling C object pandas/_libs/_ujson.cpython-312-x86_64-linux-gnu.so.p/src_vendored_ujson_python_ujson.c.o
+  [93/156] Compiling C object pandas/_libs/_ujson.cpython-312-x86_64-linux-gnu.so.p/src_vendored_ujson_python_objToJSON.c.o
+  [94/156] Compiling C object pandas/_libs/_ujson.cpython-312-x86_64-linux-gnu.so.p/src_vendored_ujson_python_JSONtoObj.c.o
+  [95/156] Compiling C object pandas/_libs/_ujson.cpython-312-x86_64-linux-gnu.so.p/src_vendored_ujson_lib_ultrajsonenc.c.o
+  [96/156] Compiling C object pandas/_libs/_ujson.cpython-312-x86_64-linux-gnu.so.p/src_vendored_ujson_lib_ultrajsondec.c.o
+  [97/156] Compiling C object pandas/_libs/ops.cpython-312-x86_64-linux-gnu.so.p/meson-generated_ops.pyx.c.o
+  [98/156] Compiling C object pandas/_libs/ops_dispatch.cpython-312-x86_64-linux-gnu.so.p/meson-generated_ops_dispatch.pyx.c.o
+  [99/156] Compiling C object pandas/_libs/properties.cpython-312-x86_64-linux-gnu.so.p/meson-generated_properties.pyx.c.o
+  [100/156] Compiling C object pandas/_libs/reshape.cpython-312-x86_64-linux-gnu.so.p/meson-generated_reshape.pyx.c.o
+  [101/156] Compiling C object pandas/_libs/sas.cpython-312-x86_64-linux-gnu.so.p/meson-generated_sas.pyx.c.o
+  [102/156] Compiling C object pandas/_libs/byteswap.cpython-312-x86_64-linux-gnu.so.p/meson-generated_byteswap.pyx.c.o
+  [103/156] Compiling C object pandas/_libs/sparse.cpython-312-x86_64-linux-gnu.so.p/meson-generated_sparse.pyx.c.o
+  [104/156] Compiling Cython source /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/pandas/_libs/window/indexers.pyx
+  [105/156] Compiling C object pandas/_libs/tslib.cpython-312-x86_64-linux-gnu.so.p/meson-generated_tslib.pyx.c.o
+  [106/156] Compiling C object pandas/_libs/testing.cpython-312-x86_64-linux-gnu.so.p/meson-generated_testing.pyx.c.o
+  [107/156] Compiling C object pandas/_libs/writers.cpython-312-x86_64-linux-gnu.so.p/meson-generated_writers.pyx.c.o
+  [108/156] Compiling C++ object pandas/_libs/window/aggregations.cpython-312-x86_64-linux-gnu.so.p/meson-generated_aggregations.pyx.cpp.o
+  [109/156] Compiling C object pandas/_libs/window/indexers.cpython-312-x86_64-linux-gnu.so.p/meson-generated_indexers.pyx.c.o
+  [110/156] Linking target _cyutility.cpython-312-x86_64-linux-gnu.so
+  [111/156] Copying file pandas/__init__.py
+  [112/156] Linking target pandas/_libs/tslibs/base.cpython-312-x86_64-linux-gnu.so
+  [113/156] Linking target pandas/_libs/tslibs/ccalendar.cpython-312-x86_64-linux-gnu.so
+  [114/156] Generating write_version_file with a custom command
+  [115/156] Linking target pandas/_libs/tslibs/dtypes.cpython-312-x86_64-linux-gnu.so
+  [116/156] Linking target pandas/_libs/tslibs/conversion.cpython-312-x86_64-linux-gnu.so
+  [117/156] Linking target pandas/_libs/tslibs/fields.cpython-312-x86_64-linux-gnu.so
+  [118/156] Linking target pandas/_libs/tslibs/np_datetime.cpython-312-x86_64-linux-gnu.so
+  [119/156] Linking target pandas/_libs/tslibs/nattype.cpython-312-x86_64-linux-gnu.so
+  [120/156] Linking target pandas/_libs/tslibs/offsets.cpython-312-x86_64-linux-gnu.so
+  [121/156] Linking target pandas/_libs/tslibs/parsing.cpython-312-x86_64-linux-gnu.so
+  [122/156] Linking target pandas/_libs/tslibs/period.cpython-312-x86_64-linux-gnu.so
+  [123/156] Linking target pandas/_libs/tslibs/strptime.cpython-312-x86_64-linux-gnu.so
+  [124/156] Linking target pandas/_libs/tslibs/timedeltas.cpython-312-x86_64-linux-gnu.so
+  [125/156] Linking target pandas/_libs/tslibs/timestamps.cpython-312-x86_64-linux-gnu.so
+  [126/156] Linking target pandas/_libs/tslibs/timezones.cpython-312-x86_64-linux-gnu.so
+  [127/156] Linking target pandas/_libs/tslibs/tzconversion.cpython-312-x86_64-linux-gnu.so
+  [128/156] Linking target pandas/_libs/tslibs/vectorized.cpython-312-x86_64-linux-gnu.so
+  [129/156] Linking target pandas/_libs/arrays.cpython-312-x86_64-linux-gnu.so
+  [130/156] Linking target pandas/_libs/algos.cpython-312-x86_64-linux-gnu.so
+  [131/156] Linking target pandas/_libs/hashing.cpython-312-x86_64-linux-gnu.so
+  [132/156] Linking target pandas/_libs/groupby.cpython-312-x86_64-linux-gnu.so
+  [133/156] Linking target pandas/_libs/hashtable.cpython-312-x86_64-linux-gnu.so
+  [134/156] Linking target pandas/_libs/index.cpython-312-x86_64-linux-gnu.so
+  [135/156] Linking target pandas/_libs/indexing.cpython-312-x86_64-linux-gnu.so
+  [136/156] Linking target pandas/_libs/internals.cpython-312-x86_64-linux-gnu.so
+  [137/156] Linking target pandas/_libs/interval.cpython-312-x86_64-linux-gnu.so
+  [138/156] Linking target pandas/_libs/join.cpython-312-x86_64-linux-gnu.so
+  [139/156] Linking target pandas/_libs/missing.cpython-312-x86_64-linux-gnu.so
+  [140/156] Linking target pandas/_libs/lib.cpython-312-x86_64-linux-gnu.so
+  [141/156] Linking target pandas/_libs/pandas_datetime.cpython-312-x86_64-linux-gnu.so
+  [142/156] Linking target pandas/_libs/pandas_parser.cpython-312-x86_64-linux-gnu.so
+  [143/156] Linking target pandas/_libs/parsers.cpython-312-x86_64-linux-gnu.so
+  [144/156] Linking target pandas/_libs/_ujson.cpython-312-x86_64-linux-gnu.so
+  [145/156] Linking target pandas/_libs/ops.cpython-312-x86_64-linux-gnu.so
+  [146/156] Linking target pandas/_libs/ops_dispatch.cpython-312-x86_64-linux-gnu.so
+  [147/156] Linking target pandas/_libs/properties.cpython-312-x86_64-linux-gnu.so
+  [148/156] Linking target pandas/_libs/reshape.cpython-312-x86_64-linux-gnu.so
+  [149/156] Linking target pandas/_libs/sas.cpython-312-x86_64-linux-gnu.so
+  [150/156] Linking target pandas/_libs/byteswap.cpython-312-x86_64-linux-gnu.so
+  [151/156] Linking target pandas/_libs/sparse.cpython-312-x86_64-linux-gnu.so
+  [152/156] Linking target pandas/_libs/tslib.cpython-312-x86_64-linux-gnu.so
+  [153/156] Linking target pandas/_libs/testing.cpython-312-x86_64-linux-gnu.so
+  [154/156] Linking target pandas/_libs/writers.cpython-312-x86_64-linux-gnu.so
+  [155/156] Linking target pandas/_libs/window/indexers.cpython-312-x86_64-linux-gnu.so
+  [156/156] Linking target pandas/_libs/window/aggregations.cpython-312-x86_64-linux-gnu.so
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: pandas
+  Building editable for pandas (pyproject.toml): started
+  Running command Building editable for pandas (pyproject.toml)
+  Building editable for pandas (pyproject.toml): finished with status 'done'
+  Created wheel for pandas: filename=pandas-3.2.0.dev0+737.g717bcd3eda.dirty-cp312-cp312-linux_x86_64.whl size=44782 sha256=3b5a19129dcd20df6289510b5364b5c40ef59b2ab18501ee0cd49e2a1684807a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-l6ndddgb/wheels/47/8e/e6/fb7fc5bb1fddc043d65e76baf43683b765755bb2552fb7ab62
+Successfully built pandas
+Installing collected packages: pandas
+  Attempting uninstall: pandas
+    Found existing installation: pandas 3.1.1
+    Uninstalling pandas-3.1.1:
+      Removing file or directory /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/lib/python3.12/site-packages/pandas-3.1.1.dist-info/
+      Removing file or directory /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream-pandas/.pixi/envs/py312/lib/python3.12/site-packages/pandas/
+      Successfully uninstalled pandas-3.1.1
+Successfully installed pandas-3.2.0.dev0+737.g717bcd3eda.dirty

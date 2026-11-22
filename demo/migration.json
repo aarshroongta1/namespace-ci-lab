@@ -1,0 +1,80 @@
+{
+  "run_id": "45062565507",
+  "created_at": "2026-11-22T19:45:36Z",
+  "head_sha": "6f4faa508d0f436acd73195a3c32cdf68741e36f",
+  "workflow_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507",
+  "variants": [
+    {
+      "id": "github",
+      "title": "GitHub",
+      "description": "Existing runner and archive cache",
+      "total": 142.0,
+      "job_seconds": 137.0,
+      "times": [
+        5.0,
+        45.0,
+        23.0,
+        6.803,
+        43.559,
+        10.718,
+        7.92
+      ],
+      "passed": 4045,
+      "skipped": 2,
+      "hits": 59,
+      "calls": 59,
+      "files": 87086,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507/job/137331519171",
+      "prefix": "github-edited",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas-migration/github/"
+    },
+    {
+      "id": "namespace-runner",
+      "title": "Namespace runner",
+      "description": "Only the runner changes; archive cache stays",
+      "total": 248.0,
+      "job_seconds": 235.0,
+      "times": [
+        13.0,
+        23.0,
+        22.0,
+        1.612,
+        175.386,
+        8.72,
+        4.282
+      ],
+      "passed": 4045,
+      "skipped": 2,
+      "hits": 3,
+      "calls": 59,
+      "files": 87086,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507/job/137331518970",
+      "prefix": "namespace-runner-edited",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas-migration/namespace-runner/"
+    },
+    {
+      "id": "namespace-volume",
+      "title": "Namespace with Cache Volume",
+      "description": "Same runner; cached paths mounted on a volume",
+      "total": 98.0,
+      "job_seconds": 85.0,
+      "times": [
+        13.0,
+        24.0,
+        0.0,
+        11.318,
+        35.712,
+        8.297,
+        5.673
+      ],
+      "passed": 4045,
+      "skipped": 2,
+      "hits": 59,
+      "calls": 59,
+      "files": 87088,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507/job/137331519246",
+      "prefix": "namespace-volume-edited",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas-migration/namespace-volume/"
+    }
+  ]
+}

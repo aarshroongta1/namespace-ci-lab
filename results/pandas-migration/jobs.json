@@ -1,0 +1,438 @@
+[
+  {
+    "id": 137331518970,
+    "run_id": 45062565507,
+    "workflow_name": "pandas runner migration comparison",
+    "head_branch": "main",
+    "run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/runs/45062565507",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOV32hRs8AAAAf-Zit-g",
+    "head_sha": "6f4faa508d0f436acd73195a3c32cdf68741e36f",
+    "url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/jobs/137331518970",
+    "html_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507/job/137331518970",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-22T19:45:38Z",
+    "started_at": "2026-11-22T19:45:49Z",
+    "completed_at": "2026-11-22T19:49:44Z",
+    "name": "namespace-runner",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-11-22T19:45:49Z",
+        "completed_at": "2026-11-22T19:45:50Z"
+      },
+      {
+        "name": "Set up runner",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-11-22T19:45:50Z",
+        "completed_at": "2026-11-22T19:45:50Z"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-11-22T19:45:50Z",
+        "completed_at": "2026-11-22T19:45:51Z"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-11-22T19:45:51Z",
+        "completed_at": "2026-11-22T19:46:07Z"
+      },
+      {
+        "name": "Install compiler cache",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-11-22T19:46:07Z",
+        "completed_at": "2026-11-22T19:46:11Z"
+      },
+      {
+        "name": "Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-11-22T19:46:11Z",
+        "completed_at": "2026-11-22T19:46:12Z"
+      },
+      {
+        "name": "Restore existing cache archive",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7,
+        "started_at": "2026-11-22T19:46:12Z",
+        "completed_at": "2026-11-22T19:46:34Z"
+      },
+      {
+        "name": "Attach Namespace Cache Volume",
+        "status": "completed",
+        "conclusion": "skipped",
+        "number": 8,
+        "started_at": "2026-11-22T19:46:34Z",
+        "completed_at": "2026-11-22T19:46:34Z"
+      },
+      {
+        "name": "Build pandas and run groupby checks",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9,
+        "started_at": "2026-11-22T19:46:34Z",
+        "completed_at": "2026-11-22T19:49:42Z"
+      },
+      {
+        "name": "Preserve evidence",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10,
+        "started_at": "2026-11-22T19:49:42Z",
+        "completed_at": "2026-11-22T19:49:43Z"
+      },
+      {
+        "name": "Post Restore existing cache archive",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 17,
+        "started_at": "2026-11-22T19:49:43Z",
+        "completed_at": "2026-11-22T19:49:43Z"
+      },
+      {
+        "name": "Post Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 18,
+        "started_at": "2026-11-22T19:49:43Z",
+        "completed_at": "2026-11-22T19:49:43Z"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 19,
+        "started_at": "2026-11-22T19:49:43Z",
+        "completed_at": "2026-11-22T19:49:43Z"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 20,
+        "started_at": "2026-11-22T19:49:43Z",
+        "completed_at": "2026-11-22T19:49:43Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 21,
+        "started_at": "2026-11-22T19:49:43Z",
+        "completed_at": "2026-11-22T19:49:43Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/check-runs/137331518970",
+    "labels": [
+      "namespace-profile-ci-lab"
+    ],
+    "runner_id": 10,
+    "runner_name": "nsc-runner-rgbm4otmrrjcc",
+    "runner_group_id": 1,
+    "runner_group_name": "Default"
+  },
+  {
+    "id": 137331519171,
+    "run_id": 45062565507,
+    "workflow_name": "pandas runner migration comparison",
+    "head_branch": "main",
+    "run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/runs/45062565507",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOV32hRs8AAAAf-Ziuww",
+    "head_sha": "6f4faa508d0f436acd73195a3c32cdf68741e36f",
+    "url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/jobs/137331519171",
+    "html_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507/job/137331519171",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-22T19:45:38Z",
+    "started_at": "2026-11-22T19:45:41Z",
+    "completed_at": "2026-11-22T19:47:58Z",
+    "name": "github",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-11-22T19:45:41Z",
+        "completed_at": "2026-11-22T19:45:44Z"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-11-22T19:45:44Z",
+        "completed_at": "2026-11-22T19:45:45Z"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-11-22T19:45:45Z",
+        "completed_at": "2026-11-22T19:46:08Z"
+      },
+      {
+        "name": "Install compiler cache",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-11-22T19:46:08Z",
+        "completed_at": "2026-11-22T19:46:25Z"
+      },
+      {
+        "name": "Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-11-22T19:46:25Z",
+        "completed_at": "2026-11-22T19:46:26Z"
+      },
+      {
+        "name": "Restore existing cache archive",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-11-22T19:46:26Z",
+        "completed_at": "2026-11-22T19:46:49Z"
+      },
+      {
+        "name": "Attach Namespace Cache Volume",
+        "status": "completed",
+        "conclusion": "skipped",
+        "number": 7,
+        "started_at": "2026-11-22T19:46:49Z",
+        "completed_at": "2026-11-22T19:46:49Z"
+      },
+      {
+        "name": "Build pandas and run groupby checks",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-11-22T19:46:49Z",
+        "completed_at": "2026-11-22T19:47:54Z"
+      },
+      {
+        "name": "Preserve evidence",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9,
+        "started_at": "2026-11-22T19:47:54Z",
+        "completed_at": "2026-11-22T19:47:55Z"
+      },
+      {
+        "name": "Post Restore existing cache archive",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 15,
+        "started_at": "2026-11-22T19:47:55Z",
+        "completed_at": "2026-11-22T19:47:55Z"
+      },
+      {
+        "name": "Post Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 16,
+        "started_at": "2026-11-22T19:47:55Z",
+        "completed_at": "2026-11-22T19:47:55Z"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 17,
+        "started_at": "2026-11-22T19:47:55Z",
+        "completed_at": "2026-11-22T19:47:55Z"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 18,
+        "started_at": "2026-11-22T19:47:55Z",
+        "completed_at": "2026-11-22T19:47:55Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 19,
+        "started_at": "2026-11-22T19:47:55Z",
+        "completed_at": "2026-11-22T19:47:56Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/check-runs/137331519171",
+    "labels": [
+      "ubuntu-24.04"
+    ],
+    "runner_id": 1000000141,
+    "runner_name": "GitHub Actions 1000000141",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  },
+  {
+    "id": 137331519246,
+    "run_id": 45062565507,
+    "workflow_name": "pandas runner migration comparison",
+    "head_branch": "main",
+    "run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/runs/45062565507",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOV32hRs8AAAAf-ZivDg",
+    "head_sha": "6f4faa508d0f436acd73195a3c32cdf68741e36f",
+    "url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/jobs/137331519246",
+    "html_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507/job/137331519246",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-22T19:45:38Z",
+    "started_at": "2026-11-22T19:45:49Z",
+    "completed_at": "2026-11-22T19:47:14Z",
+    "name": "namespace-volume",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-11-22T19:45:50Z",
+        "completed_at": "2026-11-22T19:45:51Z"
+      },
+      {
+        "name": "Set up runner",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-11-22T19:45:51Z",
+        "completed_at": "2026-11-22T19:45:51Z"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-11-22T19:45:51Z",
+        "completed_at": "2026-11-22T19:45:52Z"
+      },
+      {
+        "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-11-22T19:45:52Z",
+        "completed_at": "2026-11-22T19:46:07Z"
+      },
+      {
+        "name": "Install compiler cache",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-11-22T19:46:07Z",
+        "completed_at": "2026-11-22T19:46:12Z"
+      },
+      {
+        "name": "Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-11-22T19:46:12Z",
+        "completed_at": "2026-11-22T19:46:13Z"
+      },
+      {
+        "name": "Restore existing cache archive",
+        "status": "completed",
+        "conclusion": "skipped",
+        "number": 7,
+        "started_at": "2026-11-22T19:46:13Z",
+        "completed_at": "2026-11-22T19:46:13Z"
+      },
+      {
+        "name": "Attach Namespace Cache Volume",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-11-22T19:46:13Z",
+        "completed_at": "2026-11-22T19:46:13Z"
+      },
+      {
+        "name": "Build pandas and run groupby checks",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9,
+        "started_at": "2026-11-22T19:46:13Z",
+        "completed_at": "2026-11-22T19:47:11Z"
+      },
+      {
+        "name": "Preserve evidence",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10,
+        "started_at": "2026-11-22T19:47:11Z",
+        "completed_at": "2026-11-22T19:47:12Z"
+      },
+      {
+        "name": "Post Attach Namespace Cache Volume",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 17,
+        "started_at": "2026-11-22T19:47:12Z",
+        "completed_at": "2026-11-22T19:47:12Z"
+      },
+      {
+        "name": "Post Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 18,
+        "started_at": "2026-11-22T19:47:12Z",
+        "completed_at": "2026-11-22T19:47:12Z"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 19,
+        "started_at": "2026-11-22T19:47:12Z",
+        "completed_at": "2026-11-22T19:47:12Z"
+      },
+      {
+        "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 20,
+        "started_at": "2026-11-22T19:47:12Z",
+        "completed_at": "2026-11-22T19:47:13Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 21,
+        "started_at": "2026-11-22T19:47:13Z",
+        "completed_at": "2026-11-22T19:47:13Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/check-runs/137331519246",
+    "labels": [
+      "namespace-profile-ci-lab"
+    ],
+    "runner_id": 11,
+    "runner_name": "nsc-runner-emvjffkfgbota",
+    "runner_group_id": 1,
+    "runner_group_name": "Default"
+  }
+]

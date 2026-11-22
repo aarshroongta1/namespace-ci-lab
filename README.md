@@ -1,6 +1,8 @@
 # A small pandas CI experiment on Namespace
 
-**[Open the interactive demo](https://www.aarshroongta.com/demo/namespace)** — replay the actual runs, inspect each stage, and explore the cache miss.
+**[Open the interactive demo](https://www.aarshroongta.com/demo/namespace)** — compare the existing GitHub job, the runner-only migration, and Namespace Cache Volumes.
+
+The updated experiment measures time from one shared dispatch to passing checks. GitHub took **142s**, Namespace with the existing archive **248s**, and Namespace with a populated Cache Volume **98s**. All passed 4,045 tests. The runner-only case restored its archive but hit only 3/59 compiler calls; the other configurations hit 59/59. See [the controlled migration results](MIGRATION_RESULTS.md). The earlier runs below are retained as preliminary evidence.
 
 I ran a pandas source build and **4,045 groupby tests** on GitHub and Namespace, using Linux runners with 4 vCPUs and about 16 GB RAM.
 
