@@ -1,0 +1,21 @@
+.github/workflows/cache-diagnosis.yml
+  s_6cd6e415f326a5::t_bc59cf767e2e3e 1-67
+scripts/collect_cache_debug.py
+  s_6cd6e415f326a5::t_1b34c0a581c5d8 1-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0649500674e5122d0665e35f288957f67682127a",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
