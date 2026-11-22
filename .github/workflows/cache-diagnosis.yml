@@ -1,0 +1,67 @@
+name: pandas compiler-cache diagnosis
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    name: ${{ matrix.variant }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: github-debug
+            runner: ubuntu-24.04
+          - variant: namespace-debug
+            runner: namespace-profile-ci-lab
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    env:
+      PHASE: edited
+      PROVIDER: ${{ matrix.variant }}
+      COHORT: pandas-3
+      RESULTS_DIRECTORY: results/cache-diagnosis/${{ matrix.variant }}
+      RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      PIXI_CACHE_DIR: ${{ github.workspace }}/pandas-cache/pandas-3/pixi
+      CCACHE_DIR: ${{ github.workspace }}/pandas-cache/pandas-3/ccache
+      CCACHE_BASEDIR: ${{ github.workspace }}/upstream-pandas
+      CCACHE_MAXSIZE: 2G
+      CCACHE_DEBUG: '1'
+      CCACHE_DEBUGLEVEL: '2'
+      CCACHE_DEBUGDIR: ${{ github.workspace }}/ccache-debug
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: pandas-dev/pandas
+          ref: 717bcd3eda554a0b2e826889f9e30efbd88f00cd
+          path: upstream-pandas
+          fetch-depth: 0
+          fetch-tags: true
+          persist-credentials: false
+      - name: Install compiler cache
+        run: sudo apt-get update -qq && sudo apt-get install -y ccache
+      - uses: prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e
+        with:
+          pixi-version: v0.82.1
+          run-install: false
+          cache: false
+      - name: Restore the same original archive
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: pandas-cache/pandas-3
+          fail-on-cache-miss: true
+          key: pandas-pandas-3-${{ hashFiles('upstream-pandas/pixi.lock') }}
+      - name: Reproduce with ccache input logging
+        run: python3 scripts/measure_pandas.py
+      - name: Collect compiler inputs and header hashes
+        if: always()
+        run: python3 scripts/collect_cache_debug.py
+      - name: Save diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cache-diagnosis-${{ matrix.variant }}-${{ github.run_id }}
+          path: results/cache-diagnosis/${{ matrix.variant }}/
