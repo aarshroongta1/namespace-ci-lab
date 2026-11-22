@@ -1,0 +1,43 @@
+demo/app.js
+  s_6cd6e415f326a5::t_95de39587a7d82 1-104
+demo/styles.css
+  s_6cd6e415f326a5::t_95de39587a7d82 6-7
+  s_8e27fbea316f4b::t_71f10010f1ed54 1,3-5
+  s_8e27fbea316f4b::t_814f41b8178e35 2
+demo/data.json
+  s_8e27fbea316f4b::t_0f224b0c9ee1a4 1-170
+demo/index.html
+  s_8e27fbea316f4b::t_71f10010f1ed54 1-29
+OUTREACH.md
+  s_8e27fbea316f4b::t_46ce487b9580b8 3
+README.md
+  s_8e27fbea316f4b::t_0b4e08ec492976 3-4
+demo/README.md
+  s_8e27fbea316f4b::t_9d032d828086cb 1-9
+scripts/export_demo.py
+  s_8e27fbea316f4b::t_34f0b0cda7a57b 1-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "19fd92232825d5e4e460f854cf92ac44a9618f54",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    },
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
