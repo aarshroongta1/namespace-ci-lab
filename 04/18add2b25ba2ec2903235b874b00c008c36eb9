@@ -1,0 +1,23 @@
+.github/workflows/pandas-locale.yml
+  s_6cd6e415f326a5::t_a3656323643fc2 75-77
+scripts/assert_compiler_reuse.py
+  s_6cd6e415f326a5::t_f0cde2110f29b4 1-13
+scripts/collect_locale_verification.py
+  s_6cd6e415f326a5::t_0454adfc336cc7 1-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0418add2b25ba2ec2903235b874b00c008c36eb9",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
