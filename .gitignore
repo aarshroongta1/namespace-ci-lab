@@ -4,3 +4,4 @@ cache-store/
 
 upstream-pandas/
 pandas-cache/
+.gstack/
