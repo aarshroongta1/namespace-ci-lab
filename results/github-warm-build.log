@@ -1,0 +1,54 @@
+$ pnpm -r --filter='./packages/*' run build
+Scope: 3 of 300 workspace projects
+packages/create-vite build$ tsdown
+packages/vite build$ premove dist && pnpm build-bundle && pnpm build-types
+packages/vite build: $ rolldown --config rolldown.config.ts
+packages/create-vite build: ℹ tsdown v0.23.7 powered by rolldown v1.3.2
+packages/create-vite build: ℹ config file: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream/packages/create-vite/tsdown.config.ts 
+packages/create-vite build: ℹ entry: src/index.ts
+packages/create-vite build: ℹ target: node20
+packages/create-vite build: ℹ tsconfig: tsconfig.json
+packages/create-vite build: ℹ Build start
+packages/create-vite build: ℹ dist/index.js  44.70 kB │ gzip: 16.01 kB
+packages/create-vite build: ℹ 1 files, total: 44.70 kB
+packages/create-vite build: ✔ Build complete in 51ms
+packages/create-vite build: Done
+packages/vite build: shimmed: postcss-import/index.js
+packages/vite build: shimmed: postcss-load-config/src/req.js
+packages/vite build: shimmed: postcss-import/lib/parse-styles.js
+packages/vite build: [log] <DIR>/client/env.mjs  chunk │ size: 0.59 kB
+packages/vite build: [log] <DIR>/client/client.mjs  chunk │ size: 42.44 kB
+packages/vite build: [log] <DIR>/client/bundledDevClient.mjs  chunk │ size: 55.21 kB
+packages/vite build: [log] <DIR>/node/internal.js               chunk │ size:     0.10 kB
+packages/vite build: [log] <DIR>/node/index.js                  chunk │ size:     1.42 kB
+packages/vite build: [log] <DIR>/node/chunks/lib.js             chunk │ size:    11.60 kB
+packages/vite build: [log] <DIR>/node/chunks/postcss-import.js  chunk │ size:    18.11 kB
+packages/vite build: [log] <DIR>/node/cli.js                    chunk │ size:    38.34 kB
+packages/vite build: [log] <DIR>/node/chunks/build.js           chunk │ size:   216.84 kB
+packages/vite build: [log] <DIR>/node/chunks/dist.js            chunk │ size:   270.47 kB
+packages/vite build: [log] <DIR>/node/chunks/node.js            chunk │ size: 1,453.23 kB
+packages/vite build: [log] <DIR>/node/module-runner.js  chunk │ size: 70.62 kB
+packages/vite build: [log]
+packages/vite build: [success] rolldown v1.3.2 Finished in 271.17 ms
+packages/vite build: $ pnpm build-types-roll && pnpm build-types-check
+packages/vite build: $ rolldown --config rolldown.dts.config.ts
+packages/vite build: [log] <DIR>/internal.d.ts              chunk │ size:   0.14 kB
+packages/vite build: [log] <DIR>/chunks/trace-mapping.d.ts  chunk │ size:   3.22 kB
+packages/vite build: [log] <DIR>/module-runner.d.ts         chunk │ size:  11.54 kB
+packages/vite build: [log] <DIR>/index.d.ts                 chunk │ size: 164.16 kB
+packages/vite build: [log]
+packages/vite build: [success] rolldown v1.3.2 Finished in 302.70 ms
+packages/vite build: $ tsc --project tsconfig.check.json
+packages/vite build: Done
+packages/plugin-legacy build$ tsdown
+packages/plugin-legacy build: ℹ tsdown v0.23.7 powered by rolldown v1.3.2
+packages/plugin-legacy build: ℹ config file: /home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream/packages/plugin-legacy/tsdown.config.ts 
+packages/plugin-legacy build: ℹ entry: src/index.ts
+packages/plugin-legacy build: ℹ target: node20
+packages/plugin-legacy build: ℹ tsconfig: tsconfig.json
+packages/plugin-legacy build: ℹ Build start
+packages/plugin-legacy build: ℹ dist/index.js    30.25 kB │ gzip: 8.58 kB
+packages/plugin-legacy build: ℹ dist/index.d.ts   1.28 kB │ gzip: 0.51 kB
+packages/plugin-legacy build: ℹ 2 files, total: 31.54 kB
+packages/plugin-legacy build: ✔ Build complete in 52ms
+packages/plugin-legacy build: Done

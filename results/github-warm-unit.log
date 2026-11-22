@@ -1,0 +1,134 @@
+$ vitest run
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.1.0 [39m[90m/home/runner/work/namespace-ci-lab/namespace-ci-lab/upstream[39m
+
+ [32m✓[39m packages/vite/src/node/__tests__/utils.spec.ts [2m([22m[2m140 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[32m 57[2mms[22m[39m
+[90mstderr[2m | packages/vite/src/node/__tests__/config.spec.ts[2m:953[22m[2m[2m > [22m[2mmergeConfig[2m > [22m[2msyncs `server.hmr.*` to `server.ws.*`
+[22m[39m`server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+
+ [32m✓[39m packages/vite/src/node/ssr/__tests__/ssrTransform.spec.ts [2m([22m[2m78 tests[22m[2m)[22m[33m 302[2mms[22m[39m
+[90mstderr[2m | packages/vite/src/node/__tests__/plugins/css.spec.ts[2m:73[22m[2m[2m > [22m[2mcss modules[2m > [22m[2mcss module compose/from path resolutions
+[22m[39m
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+
+ [32m✓[39m packages/vite/src/node/__tests__/config.spec.ts [2m([22m[2m126 tests[22m[2m)[22m[33m 685[2mms[22m[39m
+[90mstderr[2m | packages/vite/src/node/__tests__/plugins/css.spec.ts[2m:234[22m[2m[2m > [22m[2murl()[2m > [22m[2mpostcss[2m > [22m[2mpropagates resolver errors in CSS URLs
+[22m[39m[33m`resolve.alias` contains an alias with `customResolver` option. This is deprecated and will be removed in Vite 9. Please use a custom plugin with a resolveId hook and `enforce: 'pre'` instead.[39m
+
+[90mstderr[2m | packages/vite/src/node/__tests__/plugins/css.spec.ts[2m:234[22m[2m[2m > [22m[2murl()[2m > [22m[2mpostcss[2m > [22m[2mpropagates resolver errors in nested Sass URLs
+[22m[39m[33m`resolve.alias` contains an alias with `customResolver` option. This is deprecated and will be removed in Vite 9. Please use a custom plugin with a resolveId hook and `enforce: 'pre'` instead.[39m
+
+[90mstderr[2m | packages/vite/src/node/__tests__/plugins/css.spec.ts[2m:234[22m[2m[2m > [22m[2murl()[2m > [22m[2mlightningcss[2m > [22m[2mpropagates resolver errors in CSS URLs
+[22m[39m[33m`resolve.alias` contains an alias with `customResolver` option. This is deprecated and will be removed in Vite 9. Please use a custom plugin with a resolveId hook and `enforce: 'pre'` instead.[39m
+
+[90mstderr[2m | packages/vite/src/node/__tests__/plugins/css.spec.ts[2m:234[22m[2m[2m > [22m[2murl()[2m > [22m[2mlightningcss[2m > [22m[2mpropagates resolver errors in nested Sass URLs
+[22m[39m[33m`resolve.alias` contains an alias with `customResolver` option. This is deprecated and will be removed in Vite 9. Please use a custom plugin with a resolveId hook and `enforce: 'pre'` instead.[39m
+
+[90mstderr[2m | packages/vite/src/node/__tests__/plugins/css.spec.ts[2m:265[22m[2m[2m > [22m[2murl()[2m > [22m[2mpreserves sourcemap positions after restoring nested fragments
+[22m[39m[33mThe `css.devSourcemap` option is deprecated. Please use `dev.sourcemap.css` instead.[39m
+
+ [32m✓[39m packages/vite/src/node/__tests__/dev.spec.ts [2m([22m[2m20 tests[22m[2m)[22m[33m 559[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/css.spec.ts [2m([22m[2m73 tests[22m[2m)[22m[33m 836[2mms[22m[39m
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+ [32m✓[39m packages/vite/src/node/server/middlewares/__tests__/indexHtml.spec.ts [2m([22m[2m29 tests[22m[2m)[22m[33m 437[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/build.spec.ts [2m([22m[2m94 tests[22m[2m)[22m[33m 1871[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/pluginContainer.spec.ts [2m([22m[2m25 tests[22m[2m)[22m[32m 154[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/hooks.spec.ts [2m([22m[2m39 tests[22m[2m)[22m[33m 615[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/runtime/__tests__/server-source-maps.spec.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 268[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/runtime/__tests__/server-runtime.spec.ts [2m([22m[2m71 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[33m 2276[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/scan.spec.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 940[2mms[22m[39m
+   [33m[2m✓[22m[39m scan jsx-runtime[33m 827[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/resolve.spec.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 354[2mms[22m[39m
+[90mstderr[2m | packages/vite/src/node/__tests__/plugins/esbuild.spec.ts
+[22m[39m[33m`transformWithEsbuild` is deprecated and will be removed in the future. Please migrate to `transformWithOxc`.[39m
+
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/esbuild.spec.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/__tests__/ssrLoadModule.spec.ts [2m([22m[2m15 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[33m 490[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/html.spec.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/importGlob/parse.spec.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/runtime/__tests__/server-hmr.spec.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 288[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/pluginFilter.spec.ts [2m([22m[2m35 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/http.spec.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 102[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/workerImportMetaUrl.spec.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/importAnalysisBuild.spec.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/import.spec.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/assetSource.spec.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/rolldownDepPlugin.spec.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/htmlSafeModulePaths.spec.ts [2m([22m[2m38 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/oxc.spec.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/define.spec.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 72[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/commandLock.spec.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 45[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/environment.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 356[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/watcher.spec.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 168[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/middlewares/__tests__/static.spec.ts [2m([22m[2m32 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+[90mstdout[2m | packages/vite/src/node/__tests__/shortcuts.spec.ts[2m:71[22m[2m[2m > [22m[2mbindCLIShortcuts[2m > [22m[2mrebinds shortcuts after server restart
+[22m[39m[2m6:18:23 PM[22m [36m[1m[vite][22m[39m server restarted.
+
+ [32m✓[39m packages/vite/src/node/__tests__/shortcuts.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/discoverBeforeListen.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 843[2mms[22m[39m
+   [33m[2m✓[22m[39m does not crash when a dep is discovered before the server starts listening[33m 328[2mms[22m[39m
+   [33m[2m✓[22m[39m resolves discovered dep processing promise on close before init[33m 514[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/runtime/__tests__/server-worker-runner.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 156[2mms[22m[39m
+ [32m✓[39m packages/vite/src/shared/__tests__/forwardConsole.spec.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 105[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/moduleGraph.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/index.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 124[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/moduleUrl.spec.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/packages.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/sourcemap.spec.ts [2m([22m[2m14 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/assetImportMetaUrl.spec.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/resolve.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 65[2mms[22m[39m
+ [32m✓[39m packages/create-vite/__tests__/cli.spec.ts [2m([22m[2m34 tests[22m[2m)[22m[33m 3694[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/importGlob/fixture.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/runnerImport.spec.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 62[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/runtime/__tests__/server-worker-runner.invoke.spec.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 603[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/dynamicImportVar/parse.spec.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/forwardConsole.spec.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/worker.spec.ts [2m([22m[2m16 tests[22m[2m)[22m[33m 495[2mms[22m[39m
+   [33m[2m✓[22m[39m ?worker&url should produce the same hash in client and SSR builds with terser client minifier[33m 396[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/env.spec.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m packages/plugin-legacy/src/__tests__/snippets.spec.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/logger.spec.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/customExtensionBundleClose.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/lockfileHash.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/tsconfig.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 114[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/processStartTime.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 113[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/terser.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 375[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/cssPreprocessorTeardown.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/cacheDir.spec.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/__tests__/ssrStacktrace.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 79[2mms[22m[39m
+ [32m✓[39m packages/plugin-legacy/src/__tests__/index.spec.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/search-root.spec.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/filterRegex.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/importGlob/utils.spec.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/modulePreloadPolyfill/modulePreloadPolyfill.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/pluginConverter.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/external.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m packages/vite/src/shared/__tests__/pretty-format.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/hmr.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 73[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/optimizer/resolve.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/license.spec.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/constants.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 1[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/oxc.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 0[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/middlewares/__tests__/hostCheck.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/transformRequest.spec.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 0[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/server/__tests__/safeModulePaths.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 0[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/ssr/runtime/__tests__/server-no-hmr.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m packages/plugin-legacy/src/__tests__/readme.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 0[2mms[22m[39m
+ [32m✓[39m packages/vite/src/node/__tests__/plugins/clientInjections.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 1[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m80 passed[39m[22m[90m (80)[39m
+[2m      Tests [22m [1m[32m1317 passed[39m[22m[2m | [22m[33m6 skipped[39m[90m (1323)[39m
+[2m   Start at [22m 18:18:17
+[2m   Duration [22m 8.23s[2m (tests 77%, transform 15%, import 8%)[22m
+
