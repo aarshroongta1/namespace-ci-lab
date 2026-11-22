@@ -2,26 +2,25 @@
 (async () => {
   const $ = id => document.getElementById(id);
   const stages = [
-    {id:'setup',name:'Setup',color:'#bdc4d4',description:'Runner setup, source checkout and tool installation. These are part of the wait too.',log:null},
-    {id:'cache',name:'Cache',color:'#b89ce5',description:'GitHub restores an archive. Namespace attaches a cache volume. Attaching a volume does not guarantee reusable data is present.',log:'ccache'},
+    {id:'setup',name:'Setup',color:'#bdc4d4',description:'Runner setup, source checkout, and tool installation.',log:null},
+    {id:'cache',name:'Cache',color:'#b89ce5',description:'Time to restore or attach the cached paths. File counts were taken before creating the environment.',log:null},
     {id:'environment',name:'Environment',color:'#67b9bc',description:'Create pandas’ locked Pixi Python 3.12 environment, using cached packages when available.',log:'environment'},
     {id:'build',name:'Source build',color:'#5353d8',description:'Build pandas from source with Meson and two compiler workers. The build directory is fresh on every run; only compiler outputs are cached.',log:'build'},
     {id:'tests',name:'Tests',color:'#e4b36c',description:'Run two existing groupby test files with two pytest workers. Every recorded job passed 4,045 tests, with 2 skipped.',log:'unit'},
     {id:'finish',name:'Finish',color:'#dfe2e9',description:'Upload evidence, save or commit the cache, and finish the job. Small timing gaps are included here.',log:null}
   ];
   const copy = {
-    cold:{title:'Start with nothing cached.',description:'Fresh runners, fresh environments, and a full pandas source build.',label:'Whole job, with empty experiment caches',summary:'Namespace finished in 217s. GitHub finished in 299s.',delta:'82s',caption:'less time in this run'},
-    warm:{title:'Same build time. Less time around it.',description:'Both builds take about 32 seconds. Watch the rest of the job.',label:'Whole job, with populated caches',summary:'Namespace finished in 76s. GitHub finished in 131s. Setup and cache handling explain most of the difference.',delta:'55s',caption:'less time in this run'},
-    edited:{title:'A small edit. The cache still helps.',description:'Rename a local Python helper, then rebuild and run the same tests.',label:'Whole job, after a behavior-preserving Python edit',summary:'Namespace finished in 62s. GitHub finished in 143s. Both reused all 59 cacheable compiler calls.',delta:'81s',caption:'less time in this run'},
-    miss:{title:'A repeated run. An empty cache.',description:'The first Namespace repeat started cold, even though caching was enabled.',label:'The onboarding cache miss',summary:'Namespace passed every test but took 208s. The cache contained no reusable files; the verified warm run later took 76s.',delta:'0 files',caption:'cached at the start on Namespace'}
+    cold:{title:'Cold-cache run',description:'No cached packages or compiler outputs at the start.',label:'Whole-job result',summary:'Source build: 202.28s on GitHub, 169.90s on Namespace.',delta:'82s',caption:'shorter on Namespace'},
+    warm:{title:'Populated-cache run',description:'Both builds hit all 59 cacheable compiler calls.',label:'Whole-job result',summary:'Source build: 32.97s on GitHub, 32.09s on Namespace. The job-time difference came from cache handling and other setup.',delta:'55s',caption:'shorter on Namespace'},
+    edited:{title:'Python edit with populated caches',description:'Renamed prod_compat to product_compat in GroupBy.prod.',label:'Whole-job result',summary:'Both builds hit all 59 cacheable compiler calls. Source build: 36.07s on GitHub, 24.22s on Namespace.',delta:'81s',caption:'shorter on Namespace'},
+    miss:{title:'Namespace repeat with a cache miss',description:'Compared with the populated-cache GitHub run. The Namespace run started with 0 cached files.',label:'Cache-miss result',summary:'Namespace took 208s with an empty cache. Its later populated-cache run took 76s.',delta:'0 files',caption:'in the Namespace cache at start'}
   };
-  let data,scenario='warm',selectedStage='build',playing=false,elapsed=0,max=0,raf=0,last=0;
+  let data,scenario='warm',selectedStage='cache',playing=false,elapsed=0,max=0,raf=0,last=0;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const fmt = n => Number.isInteger(n) ? `${n}s` : `${n.toFixed(2)}s`;
   const name = p => p==='github'?'GitHub':'Namespace';
-  const logo = p => p==='namespace'?'N_':'<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.21 3.26.93.1-.72.39-1.22.71-1.5-2.49-.28-5.11-1.25-5.11-5.54 0-1.22.44-2.22 1.15-3-.11-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.22 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.25-5.12 5.53.4.35.76 1.03.76 2.08v3.21c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>';
   function stop(){playing=false;cancelAnimationFrame(raf);updatePlay();}
-  function updatePlay(){ $('play').querySelector('span').textContent=playing?'Pause replay':elapsed>0&&elapsed<max?'Continue replay':'Replay comparison'; $('finish').hidden=elapsed>=max; }
+  function updatePlay(){ $('play').querySelector('span').textContent=playing?'Pause':elapsed>0&&elapsed<max?'Continue':'Replay'; $('finish').hidden=elapsed>=max; }
   function inspect(id){
     selectedStage=id;
     const i=stages.findIndex(s=>s.id===id),s=stages[i];
@@ -34,7 +33,7 @@
       let note=id==='cache'?`${r.files.toLocaleString()} files at start`:id==='build'?`${r.hits} / ${r.calls} compiler-cache hits`:id==='tests'?`${r.passed.toLocaleString()} passed, ${r.skipped} skipped`:'';
       const href=s.log?`${r.logbase}${r.prefix}-${s.log}.log`:r.url;
       const value=id==='cache'&&seconds===0?'<1s':fmt(seconds);
-      return `<div class="evidence-stat"><span class="stat-provider">${name(p)}</span><strong>${value}</strong><span class="evidence-note">${note}</span><a href="${href}" target="_blank" rel="noopener">${s.log?'Open recorded log':'Open CI run'}</a></div>`;
+      return `<div class="evidence-stat"><span class="stat-provider">${name(p)}</span><strong>${value}</strong><span class="evidence-note">${note}</span><a href="${href}" target="_blank" rel="noopener">${s.log?'Log':'CI run'}</a></div>`;
     }).join('');
   }
   function paint(){
@@ -55,7 +54,7 @@
       cursor.style.left=`${t/max*100}%`;cursor.style.display=elapsed<max&&t<r.total?'block':'none';
       const status=document.querySelector(`[data-status="${p}"]`);
       if(t>=r.total)status.textContent=scenario==='miss'&&p==='namespace'?'Passed, but cache was empty':`${r.passed.toLocaleString()} passed, ${r.skipped} skipped`;
-      else status.textContent=`${current} · recorded replay`;
+      else status.textContent=`${current}`;
     }
     updatePlay();
   }
@@ -70,7 +69,7 @@
     $('lanes').innerHTML=['github','namespace'].map(p=>{
       const r=data[key][p];let offset=0;
       const segments=r.times.map((duration,i)=>{const left=offset/max*100;offset+=duration;return `<button class="segment" data-stage="${stages[i].id}" style="left:${left}%;width:${Math.max(duration/max*100,.12)}%" aria-label="${name(p)} ${stages[i].name}: ${duration===0?'under one second':duration.toFixed(2)+' seconds'}" title="${stages[i].name}: ${duration===0?'<1s':fmt(duration)}"></button>`;}).join('');
-      return `<div class="lane" data-provider="${p}"><div class="provider-name"><span class="provider-logo ${p}">${logo(p)}</span>${name(p)}</div><div class="track"><div class="segments">${segments}</div><div class="cursor"></div></div><div class="lane-time"><span class="lane-time-value">${r.total}s</span><small>complete</small></div></div><div class="lane-meta"><p data-status="${p}"></p><a href="${r.url}" target="_blank" rel="noopener">CI run</a></div>`;
+      return `<div class="lane" data-provider="${p}"><div class="provider-name">${name(p)}</div><div class="track"><div class="segments">${segments}</div><div class="cursor"></div></div><div class="lane-time"><span class="lane-time-value">${r.total}s</span><small>complete</small></div></div><div class="lane-meta"><p data-status="${p}"></p><a href="${r.url}" target="_blank" rel="noopener">CI run</a></div>`;
     }).join('');
     document.querySelectorAll('.segment').forEach(b=>b.addEventListener('click',()=>inspect(b.dataset.stage)));
     inspect(key==='miss'?'cache':selectedStage);paint();
@@ -86,10 +85,10 @@
   try{
     const response=await fetch('/namespace-ci/data.json');if(!response.ok)throw new Error('Missing data');data=await response.json();
     data.miss={github:data.warm.github,namespace:data.miss.namespace};
-    $('legend').innerHTML=stages.map(s=>`<button class="legend-button" data-stage="${s.id}" aria-pressed="${s.id==='build'}"><span class="legend-swatch" style="background:${s.color}"></span>${s.name}</button>`).join('');
+    $('legend').innerHTML=stages.map(s=>`<button class="legend-button" data-stage="${s.id}" aria-pressed="${s.id==='cache'}"><span class="legend-swatch" style="background:${s.color}"></span>${s.name}</button>`).join('');
     document.querySelectorAll('.legend-button').forEach(b=>b.addEventListener('click',()=>inspect(b.dataset.stage)));
     document.querySelectorAll('[data-scenario]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.scenario)));
-    $('show-miss').addEventListener('click',()=>{choose('miss',true);$('play').click();});
+    $('show-miss').addEventListener('click',()=>{choose('miss',true);});
     $('play').addEventListener('click',()=>{
       if(playing){stop();return;}
       if(elapsed>=max)elapsed=0;
