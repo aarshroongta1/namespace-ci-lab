@@ -1,0 +1,83 @@
+results/pandas/failed-attempts/45055055366/namespace-cold-unit.log
+  s_8e27fbea316f4b::t_b9bc6c5a79e5f6 1-28
+results/pandas/failed-attempts/45055052784/github-cold-unit.log
+  s_6cd6e415f326a5::t_ae50c3dc783c5e 1-28
+results/pandas/failed-attempts/45054934999/github-cold-ccache.log
+  s_6cd6e415f326a5::t_56dfc753e109bc 1-11
+results/pandas/failed-attempts/45055055366/namespace-cold-environment.log
+  s_8e27fbea316f4b::t_b9bc6c5a79e5f6 1
+results/pandas/failed-attempts/45054934999/github-cold-environment.log
+  s_6cd6e415f326a5::t_56dfc753e109bc 1
+results/pandas/failed-attempts/45055055366/namespace-cold-ccache.log
+  s_8e27fbea316f4b::t_b9bc6c5a79e5f6 1-21
+results/pandas/failed-attempts/45055052784/github-cold-build.log
+  s_6cd6e415f326a5::t_ae50c3dc783c5e 1-254
+results/pandas/failed-attempts/45055052784/github-cold-ccache.log
+  s_6cd6e415f326a5::t_ae50c3dc783c5e 1-21
+results/pandas/failed-attempts/45055052784/github-cold-job.json
+  s_6cd6e415f326a5::t_ae50c3dc783c5e 1-131
+results/pandas/failed-attempts/45055052784/github-cold.json
+  s_6cd6e415f326a5::t_ae50c3dc783c5e 1-30
+results/pandas/failed-attempts/45055055366/namespace-cold-job.json
+  s_8e27fbea316f4b::t_b9bc6c5a79e5f6 1-139
+results/pandas/failed-attempts/45055052784/github-cold-versions.log
+  s_6cd6e415f326a5::t_ae50c3dc783c5e 1-401
+PANDAS_RESULTS.md
+  s_6cd6e415f326a5::t_665654d910e218 1-9
+results/pandas/failed-attempts/45054934999/github-cold-build.log
+  s_6cd6e415f326a5::t_56dfc753e109bc 1-62
+results/pandas/failed-attempts/45054934999/github-cold-versions.log
+  s_6cd6e415f326a5::t_56dfc753e109bc 1-401
+results/pandas/failed-attempts/45055055366/namespace-cold-build.log
+  s_8e27fbea316f4b::t_b9bc6c5a79e5f6 1-253
+results/pandas/failed-attempts/45054934999/github-cold.json
+  s_6cd6e415f326a5::t_56dfc753e109bc 1-25
+results/pandas/failed-attempts/45055055366/namespace-cold-versions.log
+  s_8e27fbea316f4b::t_b9bc6c5a79e5f6 1-401
+results/pandas/failed-attempts/45055055366/namespace-cold.json
+  s_8e27fbea316f4b::t_b9bc6c5a79e5f6 1-30
+results/pandas/failed-attempts/45055052784/github-cold-environment.log
+  s_6cd6e415f326a5::t_ae50c3dc783c5e 1
+results/pandas/failed-attempts/45054934999/github-cold-job.json
+  s_6cd6e415f326a5::t_56dfc753e109bc 1-131
+results/pandas/namespace-cold-build.log
+  s_6cd6e415f326a5::t_f92105c6f98fa2 1-253
+results/pandas/namespace-cold-ccache.log
+  s_6cd6e415f326a5::t_25fda9b950cca2 1-21
+results/pandas/namespace-cold-environment.log
+  s_6cd6e415f326a5::t_50288611f9ee01 1
+results/pandas/namespace-cold-job.json
+  s_6cd6e415f326a5::t_80d5d8b703dd91 1-139
+results/pandas/namespace-cold-junit.xml
+  s_6cd6e415f326a5::t_e570da0dbff2ab 1
+results/pandas/namespace-cold-unit.log
+  s_6cd6e415f326a5::t_f729fe9d4e8935 1-31
+results/pandas/namespace-cold-versions.log
+  s_6cd6e415f326a5::t_67dbc147630b57 1-401
+results/pandas/namespace-cold.json
+  s_6cd6e415f326a5::t_dd278d7fd25279 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "afd572f27210685489dc82ee98a69688d3ed6d50",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    },
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
