@@ -1,0 +1,21 @@
+scripts/compare_cache_debug.py
+  s_6cd6e415f326a5::t_0c2a94f970e546 1-35
+.github/workflows/pandas-locale.yml
+  s_6cd6e415f326a5::t_6bdd0cbc281bbd 1-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7e9d901f09a2351bde03643bfdebcacc44e66ea6",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
