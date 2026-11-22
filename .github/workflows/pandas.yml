@@ -66,6 +66,7 @@ jobs:
         uses: namespacelabs/nscloud-cache-action@1124a6f3ce44e5cf84cc22111530961f4d2a15f9
         with:
           path: pandas-cache/${{ inputs.cohort }}
+          fail-on-cache-miss: ${{ inputs.phase != 'cold' }}
       - name: Measure environment, source build, and groupby tests
         run: python3 scripts/measure_pandas.py
       - name: Preserve evidence
