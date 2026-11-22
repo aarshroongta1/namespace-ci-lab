@@ -8,7 +8,7 @@ import time
 
 root = Path(__file__).resolve().parents[1]
 source = root / 'upstream-pandas'
-out = root / 'results/pandas'
+out = root / os.environ.get('RESULTS_DIRECTORY', 'results/pandas')
 out.mkdir(parents=True, exist_ok=True)
 phase, provider = os.environ['PHASE'], os.environ['PROVIDER']
 prefix = f'{provider}-{phase}'
