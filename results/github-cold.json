@@ -1,0 +1,29 @@
+{
+  "provider": "github",
+  "phase": "cold",
+  "source_sha": "3567471998e3da315675086f44368e266c9c0e33",
+  "source_modified": false,
+  "run_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45054126148",
+  "cpu_count": 4,
+  "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+  "memory_kib": "MemTotal:       16078420 kB",
+  "cache_files_before": 0,
+  "steps": [
+    {
+      "name": "install",
+      "seconds": 3.966,
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "seconds": 4.466,
+      "exit_code": 0
+    },
+    {
+      "name": "unit",
+      "seconds": 8.755,
+      "exit_code": 0
+    }
+  ],
+  "cache_files_after": 30885
+}
