@@ -1,0 +1,241 @@
+Header/compiler manifest differences: 0
+
+Representative ccache input difference (first 150 lines):
+--- github
+
++++ namespace
+
+@@ -8,6 +8,8 @@
+
+ ### cc_name
+ x86_64-conda-linux-gnu-cc
+ ### LANG
++C.UTF-8
++### LC_ALL
+ C.UTF-8
+ === DIRECT MODE ===
+ ### cache entry version
+
+github-debug cache decisions:
+[2026-11-22T20:13:57.038446 3616 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.038446 3616 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.039631 3616 ] Manifest key: 03e18h90hfp6l2vctg2ljtfkugd43i0rc
+[2026-11-22T20:13:57.040412 3616 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.040557 3616 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.040954 3616 ] Result key: 1b14pqdc01r96us3rt68bkn6t0s43mcjc
+[2026-11-22T20:13:57.041571 3616 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.041571 3616 ] Result: local_storage_hit
+[2026-11-22T20:13:57.041572 3616 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.041572 3616 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.304087 3723 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.304087 3723 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.305254 3723 ] Manifest key: 6c601n7vqo8l517c2rq3u74chndg1g1hm
+[2026-11-22T20:13:57.305781 3723 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.306152 3723 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.306402 3723 ] Result key: e1bebboe50g8ipdtpt4up6kejlh48f5c2
+[2026-11-22T20:13:57.306893 3723 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.306894 3723 ] Result: local_storage_hit
+[2026-11-22T20:13:57.306894 3723 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.306895 3723 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.163151 3661 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.163151 3661 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.163977 3661 ] Manifest key: dec56mrvd29tueo3o3b32o08ou61isu5g
+[2026-11-22T20:13:57.164569 3661 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.164985 3661 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.165254 3661 ] Result key: 85221a6cpeanlah939tcrsvrpdudqr0as
+[2026-11-22T20:13:57.165612 3661 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.165612 3661 ] Result: local_storage_hit
+[2026-11-22T20:13:57.165613 3661 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.165613 3661 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.297634 3717 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.297634 3717 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.298663 3717 ] Manifest key: 25dc24rdh41d67b6r2luk4qa68i7j0c48
+[2026-11-22T20:13:57.299224 3717 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.299337 3717 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.299665 3717 ] Result key: b39a2cupr34c1akjvvunhvcg6e8b5g4dq
+[2026-11-22T20:13:57.300060 3717 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.300061 3717 ] Result: local_storage_hit
+[2026-11-22T20:13:57.300061 3717 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.300061 3717 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.247068 3679 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.247068 3679 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.249982 3679 ] Manifest key: 2490e4prcljvrbq5c3oal6ocuu5kj7f44
+[2026-11-22T20:13:57.250649 3679 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.251090 3679 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.251353 3679 ] Result key: eedccdv70l83snur9u74qs4t437kr73he
+[2026-11-22T20:13:57.252941 3679 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.252941 3679 ] Result: local_storage_hit
+[2026-11-22T20:13:57.252941 3679 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.252942 3679 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.274456 3695 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.274456 3695 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.277442 3695 ] Manifest key: ffdcaa4pgc6gq2au45bjqdbbn586q4nvk
+[2026-11-22T20:13:57.277989 3695 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.278381 3695 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.278609 3695 ] Result key: 0880do933jfa9eudbtfban8lt0r4c77ck
+[2026-11-22T20:13:57.280257 3695 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.280257 3695 ] Result: local_storage_hit
+[2026-11-22T20:13:57.280258 3695 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.280258 3695 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.276757 3697 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.276757 3697 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.277017 3697 ] Manifest key: 561dbgkjv3mvrimgich89uhob5hlakf3i
+[2026-11-22T20:13:57.277550 3697 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.277584 3697 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.278016 3697 ] Result key: 8454688m2fm5bqur18ji92jht5e868hrs
+[2026-11-22T20:13:57.278110 3697 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.278110 3697 ] Result: local_storage_hit
+[2026-11-22T20:13:57.278111 3697 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.278111 3697 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.226928 3675 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.226928 3675 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.231060 3675 ] Manifest key: 3fabb4nrc7ticd270o55049eh8lpski4q
+[2026-11-22T20:13:57.231702 3675 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.232118 3675 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.232399 3675 ] Result key: 973f4g5vl5qiuaqs7b24hhiq0vfnphaou
+[2026-11-22T20:13:57.234280 3675 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.234280 3675 ] Result: local_storage_hit
+[2026-11-22T20:13:57.234281 3675 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.234281 3675 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.291057 3711 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.291057 3711 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.291622 3711 ] Manifest key: 69586dqptvd7shujvq07m4v1qn4t3hpfo
+[2026-11-22T20:13:57.292271 3711 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.292411 3711 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.292754 3711 ] Result key: 8e91i31uv47lq285k2ulnek34oauodqjg
+[2026-11-22T20:13:57.292953 3711 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.292954 3711 ] Result: local_storage_hit
+[2026-11-22T20:13:57.292954 3711 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.292954 3711 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.302161 3721 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.302161 3721 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.302515 3721 ] Too new ctime or mtime of pandas/_libs/sparse.cpython-312-x86_64-linux-gnu.so.p/sparse.pyx.c, not considering for inode cache
+[2026-11-22T20:13:57.305431 3721 ] Too new ctime or mtime of pandas/_libs/sparse.cpython-312-x86_64-linux-gnu.so.p/sparse.pyx.c, not considering for inode cache
+[2026-11-22T20:13:57.305588 3721 ] Manifest key: 2c9bkmdq6ljkcvof3r1ppmr3sg5visgla
+[2026-11-22T20:13:57.306102 3721 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.306498 3721 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.306730 3721 ] Result key: 9afeb04jok7fu0c01r6o8abap8uuubgng
+[2026-11-22T20:13:57.308435 3721 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.308435 3721 ] Result: local_storage_hit
+[2026-11-22T20:13:57.308435 3721 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.308436 3721 ] Result: local_storage_read_hit
+[2026-11-22T20:13:57.183100 3665 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:57.183100 3665 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:57.183813 3665 ] Manifest key: 87f9ogvc8h648ns0au4s6uilfa2l3sbj8
+[2026-11-22T20:13:57.184414 3665 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h
+[2026-11-22T20:13:57.184839 3665 ] Inode cache hit: ../../.pixi/envs/py312/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h
+[2026-11-22T20:13:57.185090 3665 ] Result key: c443cup8b8e2gol7c8asv9r0os06mtih0
+[2026-11-22T20:13:57.185337 3665 ] Result: direct_cache_hit
+[2026-11-22T20:13:57.185338 3665 ] Result: local_storage_hit
+
+namespace-debug cache decisions:
+[2026-11-22T20:13:13.234474 1623 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:13.234474 1623 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:13.235619 1623 ] Manifest key: 7810a3g0s54v1ol15phn8b2vsg2lujh20
+[2026-11-22T20:13:13.294588 1623 ] Result key: 7048nc9vjvvqogkt4atog9luo2us3sfrq
+[2026-11-22T20:13:15.939396 1623 ] Result: cache_miss
+[2026-11-22T20:13:15.939396 1623 ] Result: direct_cache_miss
+[2026-11-22T20:13:15.939397 1623 ] Result: local_storage_miss
+[2026-11-22T20:13:15.939397 1623 ] Result: local_storage_read_miss
+[2026-11-22T20:13:15.939397 1623 ] Result: local_storage_read_miss
+[2026-11-22T20:13:15.939397 1623 ] Result: local_storage_write
+[2026-11-22T20:13:15.939398 1623 ] Result: local_storage_write
+[2026-11-22T20:13:15.939398 1623 ] Result: preprocessed_cache_miss
+[2026-11-22T20:13:15.939749 1623 ] No automatic cleanup needed (size 8.1 MB, files 129, max size 2.0 GB)
+[2026-11-22T20:12:49.508190 1429 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:12:49.508190 1429 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:12:49.508712 1429 ] Manifest key: 314fuqaoj6c88p5tqoft1doc9lo87ujge
+[2026-11-22T20:12:49.508797 1429 ] Result key: 731agsje6fhkiptb0nqo17gh1bfh18htg
+[2026-11-22T20:12:49.508900 1429 ] Result: direct_cache_hit
+[2026-11-22T20:12:49.508900 1429 ] Result: local_storage_hit
+[2026-11-22T20:12:49.508900 1429 ] Result: local_storage_read_hit
+[2026-11-22T20:12:49.508900 1429 ] Result: local_storage_read_hit
+[2026-11-22T20:12:49.432525 1413 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:12:49.432525 1413 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:12:49.433270 1413 ] Manifest key: 41d1fbduqkc8n455qof0sf46mma6tk2ko
+[2026-11-22T20:12:49.433465 1413 ] Result key: 28459esna5joki6rbibdl136a2bdtsv3i
+[2026-11-22T20:12:49.433584 1413 ] Result: direct_cache_hit
+[2026-11-22T20:12:49.433585 1413 ] Result: local_storage_hit
+[2026-11-22T20:12:49.433585 1413 ] Result: local_storage_read_hit
+[2026-11-22T20:12:49.433586 1413 ] Result: local_storage_read_hit
+[2026-11-22T20:13:42.149361 1761 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:13:42.149361 1761 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:13:42.150091 1761 ] Manifest key: ad94jrsceol3orpdhoetf7tb0qufb4roi
+[2026-11-22T20:13:42.202437 1761 ] Result key: 25fao04rcfqha8mes2srs3nfdsdolrj2u
+[2026-11-22T20:13:43.606268 1761 ] Result: cache_miss
+[2026-11-22T20:13:43.606269 1761 ] Result: direct_cache_miss
+[2026-11-22T20:13:43.606269 1761 ] Result: local_storage_miss
+[2026-11-22T20:13:43.606269 1761 ] Result: local_storage_read_miss
+[2026-11-22T20:13:43.606270 1761 ] Result: local_storage_read_miss
+[2026-11-22T20:13:43.606270 1761 ] Result: local_storage_write
+[2026-11-22T20:13:43.606270 1761 ] Result: local_storage_write
+[2026-11-22T20:13:43.606270 1761 ] Result: preprocessed_cache_miss
+[2026-11-22T20:13:43.606579 1761 ] No automatic cleanup needed (size 10.5 MB, files 159, max size 2.0 GB)
+[2026-11-22T20:14:14.639245 1794 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:14:14.639245 1794 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:14:14.641552 1794 ] Manifest key: f4deguv2ud7lubnl378rreai6c44b6h7m
+[2026-11-22T20:14:14.790467 1794 ] Result key: 8f31ihhlo1jlrhm2imdu7ba2kcea2s1hs
+[2026-11-22T20:14:24.729571 1794 ] Result: cache_miss
+[2026-11-22T20:14:24.729571 1794 ] Result: direct_cache_miss
+[2026-11-22T20:14:24.729571 1794 ] Result: local_storage_miss
+[2026-11-22T20:14:24.729572 1794 ] Result: local_storage_read_miss
+[2026-11-22T20:14:24.729572 1794 ] Result: local_storage_read_miss
+[2026-11-22T20:14:24.729572 1794 ] Result: local_storage_write
+[2026-11-22T20:14:24.729572 1794 ] Result: local_storage_write
+[2026-11-22T20:14:24.729573 1794 ] Result: preprocessed_cache_miss
+[2026-11-22T20:14:24.729877 1794 ] No automatic cleanup needed (size 12.1 MB, files 167, max size 2.0 GB)
+[2026-11-22T20:15:04.659981 1939 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:15:04.659981 1939 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:15:04.660738 1939 ] Manifest key: d18el5qusipsi1pgus93t66ut4gadvfu0
+[2026-11-22T20:15:04.717103 1939 ] Result key: e0f143oc97r6dh9u0v93g5tj9tb2jut5m
+[2026-11-22T20:15:06.224283 1939 ] Result: cache_miss
+[2026-11-22T20:15:06.224284 1939 ] Result: direct_cache_miss
+[2026-11-22T20:15:06.224284 1939 ] Result: local_storage_miss
+[2026-11-22T20:15:06.224284 1939 ] Result: local_storage_read_miss
+[2026-11-22T20:15:06.224285 1939 ] Result: local_storage_read_miss
+[2026-11-22T20:15:06.224285 1939 ] Result: local_storage_write
+[2026-11-22T20:15:06.224285 1939 ] Result: local_storage_write
+[2026-11-22T20:15:06.224285 1939 ] Result: preprocessed_cache_miss
+[2026-11-22T20:15:06.224662 1939 ] No automatic cleanup needed (size 14.2 MB, files 206, max size 2.0 GB)
+[2026-11-22T20:15:12.019065 1989 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:15:12.019065 1989 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:15:12.020468 1989 ] Manifest key: e52ckbofpifsqjnsojrncheeg22vstuu2
+[2026-11-22T20:15:12.090714 1989 ] Result key: fa05ukoks0bv9imupme9mu4b7jq46um1o
+[2026-11-22T20:15:14.473652 1989 ] Result: cache_miss
+[2026-11-22T20:15:14.473652 1989 ] Result: direct_cache_miss
+[2026-11-22T20:15:14.473652 1989 ] Result: local_storage_miss
+[2026-11-22T20:15:14.473653 1989 ] Result: local_storage_read_miss
+[2026-11-22T20:15:14.473653 1989 ] Result: local_storage_read_miss
+[2026-11-22T20:15:14.473653 1989 ] Result: local_storage_write
+[2026-11-22T20:15:14.473653 1989 ] Result: local_storage_write
+[2026-11-22T20:15:14.473654 1989 ] Result: preprocessed_cache_miss
+[2026-11-22T20:15:14.473979 1989 ] No automatic cleanup needed (size 14.9 MB, files 220, max size 2.0 GB)
+[2026-11-22T20:15:09.384905 1967 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:15:09.384905 1967 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:15:09.385956 1967 ] Manifest key: 5550ln23pjdcnlfetvqm4lvd9jc31gqk0
+[2026-11-22T20:15:09.447600 1967 ] Result key: f0fdf2ed296hom4kv1t98msuoiam4q01e
+[2026-11-22T20:15:11.277781 1967 ] Result: cache_miss
+[2026-11-22T20:15:11.277781 1967 ] Result: direct_cache_miss
+[2026-11-22T20:15:11.277782 1967 ] Result: local_storage_miss
+[2026-11-22T20:15:11.277782 1967 ] Result: local_storage_read_miss
+[2026-11-22T20:15:11.277782 1967 ] Result: local_storage_read_miss
+[2026-11-22T20:15:11.277782 1967 ] Result: local_storage_write
+[2026-11-22T20:15:11.277782 1967 ] Result: local_storage_write
+[2026-11-22T20:15:11.277783 1967 ] Result: preprocessed_cache_miss
+[2026-11-22T20:15:11.278094 1967 ] No automatic cleanup needed (size 14.4 MB, files 214, max size 2.0 GB)
+[2026-11-22T20:15:14.476621 1996 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:15:14.476621 1996 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:15:14.477380 1996 ] Manifest key: 3d1ch7vucq7c5g593v1pkcpni8csgts0i
+[2026-11-22T20:15:14.538200 1996 ] Result key: d5c2098s1ic0ovip1npbfj3d2u0r8i856
+[2026-11-22T20:15:17.163722 1996 ] Result: cache_miss
+[2026-11-22T20:15:17.163722 1996 ] Result: direct_cache_miss
+[2026-11-22T20:15:17.163723 1996 ] Result: local_storage_miss
+[2026-11-22T20:15:17.163723 1996 ] Result: local_storage_read_miss
+[2026-11-22T20:15:17.163723 1996 ] Result: local_storage_read_miss
+[2026-11-22T20:15:17.163723 1996 ] Result: local_storage_write
+[2026-11-22T20:15:17.163724 1996 ] Result: local_storage_write
+[2026-11-22T20:15:17.163725 1996 ] Result: preprocessed_cache_miss
+[2026-11-22T20:15:17.164065 1996 ] No automatic cleanup needed (size 15.0 MB, files 222, max size 2.0 GB)
+[2026-11-22T20:15:01.480433 1879 ] Config: (default) compiler_check = mtime
+[2026-11-22T20:15:01.480433 1879 ] Config: (environment) max_size = 2.0 GB
+[2026-11-22T20:15:01.480978 1879 ] Manifest key: de642s5j2hgnrfo80bh376e58q1eq7taq

@@ -6,13 +6,13 @@
     {id:'setup',name:'Setup',color:'#b9c0cc',description:'Check out the source and install ccache and Pixi.',log:null},
     {id:'cache',name:'Cache',color:'#b69bd9',description:'Restore an archive or attach a Cache Volume. A restored archive can still contain compiler outputs that do not match this build.',log:null},
     {id:'environment',name:'Environment',color:'#63b1b5',description:'Create the same locked Pixi Python 3.12 environment from cached packages.',log:'environment'},
-    {id:'build',name:'Build',color:'#525cc2',description:'Build pandas from source. The compiler-cache hit count explains why the runner-only migration rebuilt most native code.',log:'build'},
+    {id:'build',name:'Build',color:'#525cc2',description:'Build pandas from source. Removing the extra LC_ALL cache input restored the GitHub-generated compiler entries on Namespace.',log:'build'},
     {id:'tests',name:'Tests',color:'#d6a45e',description:'Run the same 4,045 groupby tests. All three jobs passed, with 2 skipped.',log:'unit'},
     {id:'finish',name:'Finish',color:'#e0e3e9',description:'Upload results, handle post-job cache work, and complete the job. Small timing gaps are included here.',log:null}
   ];
   const changes={
-    runner:{description:'For the runner-only configuration, the runner selector changes. The existing actions/cache step and build/test commands stay the same.',beforeLabel:'GitHub',afterLabel:'Namespace runner',before:'runs-on: ubuntu-24.04',after:'runs-on: namespace-profile-ci-lab',detail:'The workflow was compatible: both jobs passed the same checks. Performance still depended on whether the restored compiler outputs could be reused.'},
-    cache:{description:'On the same Namespace runner profile, replace archive restoration with the Cache Volume action. Cache the same package and compiler-output directories.',beforeLabel:'Existing archive cache',afterLabel:'Namespace Cache Volume',before:'actions/cache\npath: pandas-cache/pandas-3\nkey: pandas-pandas-3-<lockfile hash>',after:'namespacelabs/nscloud-cache-action\npath: pandas-cache/pandas-3',detail:'The profile has Cache Volumes enabled. The volume in this trial was already populated by earlier Namespace builds. Runners and build directories remain fresh; only the specified cache paths persist. The full workflow pins action commits.'}
+    environment:{description:'Ccache hashes both the value and presence of these locale variables. The representative compiler inputs otherwise matched.',beforeLabel:'GitHub environment',afterLabel:'Namespace environment',before:'LANG=C.UTF-8\n# LC_ALL is unset',after:'LANG=C.UTF-8\nLC_ALL=C.UTF-8',detail:'Both jobs use the C.UTF-8 locale. The redundant LC_ALL value creates a different ccache key. Compiler versions, files, and the checked headers matched.'},
+    fix:{description:'Remove LC_ALL from the Namespace build/test process. Keep LANG=C.UTF-8 and restore the same existing archive.',beforeLabel:'Unchanged Namespace job',afterLabel:'Fixed Namespace job',before:'python3 scripts/measure_pandas.py',after:'env -u LC_ALL python3 scripts/measure_pandas.py',detail:'No dependency, compiler, source, test, or cache-key setting changed. The original archive went from 3/59 to 59/59 compiler-cache hits. The regression check fails without this change and passes with it.'}
   };
   let data,records,max=0,elapsed=0,playing=false,last=0,raf=0,selected='build';
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -43,7 +43,7 @@
   }
   function frame(now){if(!playing)return;if(!last)last=now;elapsed=Math.min(max,elapsed+(now-last)/1000*(max/12));last=now;paint();if(elapsed>=max){playing=false;controls();return;}raf=requestAnimationFrame(frame);}
   try{
-    const response=await fetch('/namespace-ci/migration.json');if(!response.ok)throw new Error('Missing results');data=await response.json();records=data.variants;max=Math.max(...records.map(r=>r.total));elapsed=max;
+    const response=await fetch('/namespace-ci/verification.json');if(!response.ok)throw new Error('Missing results');data=await response.json();records=data.variants;max=Math.max(...records.map(r=>r.total));elapsed=max;
     $('ticks').innerHTML=[0,1,2,3,4].map(i=>`<span>${Math.round(max*i/4)}s</span>`).join('');
     $('lanes').innerHTML=records.map(r=>{let offset=0;const segments=r.times.map((d,i)=>{const left=offset/max*100;offset+=d;return `<button class="segment" data-stage="${stages[i].id}" style="left:${left}%;width:${Math.max(d/max*100,.1)}%" aria-label="${r.title} ${stages[i].name}, ${d.toFixed(2)} seconds" title="${stages[i].name}: ${fmt(d)}"></button>`;}).join('');return `<div class="lane" data-variant="${r.id}"><div class="provider-name">${r.title}<span class="configuration-label">${r.description}</span></div><div class="track"><div class="segments">${segments}</div><div class="cursor"></div></div><div class="lane-time"><span class="lane-time-value"></span><small></small></div></div><div class="lane-meta"><p data-status="${r.id}"></p><a href="${r.url}" target="_blank" rel="noopener">CI job</a></div>`;}).join('');
     $('legend').innerHTML=stages.map(s=>`<button class="legend-button" data-stage="${s.id}" aria-pressed="${s.id===selected}"><span class="legend-swatch" style="background:${s.color}"></span>${s.name}</button>`).join('');
@@ -53,6 +53,6 @@
     $('finish').addEventListener('click',()=>{stop();elapsed=max;paint();});
     $('scrubber').addEventListener('input',e=>{stop();elapsed=Number(e.target.value)/1000*max;paint();});
     document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing)stop();});
-    inspect('build');change('runner');paint();
+    inspect('build');change('environment');paint();
   }catch(error){console.error(error);$('load-error').hidden=false;}
 })();

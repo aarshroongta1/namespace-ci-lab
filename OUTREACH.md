@@ -1,7 +1,7 @@
-I tried Namespace on a pandas source-build and groupby-check workflow, keeping the build/test commands unchanged and testing the runner migration separately from Cache Volumes.
+I tried Namespace on a pandas source-build and groupby-test job. The first runner migration was slower, so I traced the compiler-cache misses rather than treating that as a hardware result.
 
-All three configurations passed 4,045 tests. With a volume populated by earlier Namespace builds, the checks finished 98 seconds after dispatch versus 142 on GitHub. The first runner-only migration took longer: its archive restored, but just 3 of 59 cacheable compiler calls hit. I kept that result in the demo because workflow compatibility and effective cache reuse are separate things.
+The difference was LC_ALL: Namespace set it, GitHub didn't, and ccache included it in the key even though LANG was identical. Unsetting that redundant override restored 59/59 cache hits. In the controlled rerun, Namespace returned passing checks in 80 seconds versus 126 on GitHub and 225 on unchanged Namespace. All passed 4,045 tests.
 
-Here's the interactive replay, workflow changes, and raw evidence: https://www.aarshroongta.com/demo/namespace
+I made a short demo with the input diff, one-line fix, and job logs: https://www.aarshroongta.com/demo/namespace
 
-I'm interested in a summer engineering internship and would love to work on developer infrastructure like this.
+A ccache migration note about locale variables could prevent this case. I'm looking for a summer engineering internship and would love to work on developer infrastructure like this.

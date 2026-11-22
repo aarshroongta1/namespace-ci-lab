@@ -1,0 +1,293 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 137339199659,
+      "run_id": 45065042301,
+      "workflow_name": "pandas compiler-cache diagnosis",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/runs/45065042301",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOV32hRs8AAAAf-g3gqw",
+      "head_sha": "0649500674e5122d0665e35f288957f67682127a",
+      "url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/jobs/137339199659",
+      "html_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45065042301/job/137339199659",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-22T20:11:49Z",
+      "started_at": "2026-11-22T20:11:52Z",
+      "completed_at": "2026-11-22T20:14:15Z",
+      "name": "github-debug",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-22T20:11:53Z",
+          "completed_at": "2026-11-22T20:11:56Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-22T20:11:56Z",
+          "completed_at": "2026-11-22T20:12:02Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-22T20:12:02Z",
+          "completed_at": "2026-11-22T20:12:24Z"
+        },
+        {
+          "name": "Install compiler cache",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-22T20:12:24Z",
+          "completed_at": "2026-11-22T20:12:53Z"
+        },
+        {
+          "name": "Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-22T20:12:53Z",
+          "completed_at": "2026-11-22T20:12:54Z"
+        },
+        {
+          "name": "Restore the same original archive",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-22T20:12:54Z",
+          "completed_at": "2026-11-22T20:13:17Z"
+        },
+        {
+          "name": "Reproduce with ccache input logging",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-22T20:13:17Z",
+          "completed_at": "2026-11-22T20:14:09Z"
+        },
+        {
+          "name": "Collect compiler inputs and header hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-22T20:14:09Z",
+          "completed_at": "2026-11-22T20:14:09Z"
+        },
+        {
+          "name": "Save diagnostic evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-22T20:14:09Z",
+          "completed_at": "2026-11-22T20:14:11Z"
+        },
+        {
+          "name": "Post Restore the same original archive",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-11-22T20:14:11Z",
+          "completed_at": "2026-11-22T20:14:11Z"
+        },
+        {
+          "name": "Post Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-11-22T20:14:11Z",
+          "completed_at": "2026-11-22T20:14:11Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-22T20:14:11Z",
+          "completed_at": "2026-11-22T20:14:12Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-11-22T20:14:12Z",
+          "completed_at": "2026-11-22T20:14:12Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-11-22T20:14:12Z",
+          "completed_at": "2026-11-22T20:14:12Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/check-runs/137339199659",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000142,
+      "runner_name": "GitHub Actions 1000000142",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 137339200027,
+      "run_id": 45065042301,
+      "workflow_name": "pandas compiler-cache diagnosis",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/runs/45065042301",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOV32hRs8AAAAf-g3iGw",
+      "head_sha": "0649500674e5122d0665e35f288957f67682127a",
+      "url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/actions/jobs/137339200027",
+      "html_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45065042301/job/137339200027",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-22T20:11:49Z",
+      "started_at": "2026-11-22T20:11:57Z",
+      "completed_at": "2026-11-22T20:15:37Z",
+      "name": "namespace-debug",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-22T20:11:58Z",
+          "completed_at": "2026-11-22T20:11:59Z"
+        },
+        {
+          "name": "Set up runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-22T20:11:59Z",
+          "completed_at": "2026-11-22T20:11:59Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-22T20:11:59Z",
+          "completed_at": "2026-11-22T20:11:59Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-22T20:11:59Z",
+          "completed_at": "2026-11-22T20:12:15Z"
+        },
+        {
+          "name": "Install compiler cache",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-22T20:12:15Z",
+          "completed_at": "2026-11-22T20:12:19Z"
+        },
+        {
+          "name": "Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-22T20:12:19Z",
+          "completed_at": "2026-11-22T20:12:19Z"
+        },
+        {
+          "name": "Restore the same original archive",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-22T20:12:19Z",
+          "completed_at": "2026-11-22T20:12:42Z"
+        },
+        {
+          "name": "Reproduce with ccache input logging",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-22T20:12:42Z",
+          "completed_at": "2026-11-22T20:15:33Z"
+        },
+        {
+          "name": "Collect compiler inputs and header hashes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-22T20:15:33Z",
+          "completed_at": "2026-11-22T20:15:34Z"
+        },
+        {
+          "name": "Save diagnostic evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-22T20:15:34Z",
+          "completed_at": "2026-11-22T20:15:34Z"
+        },
+        {
+          "name": "Post Restore the same original archive",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-22T20:15:34Z",
+          "completed_at": "2026-11-22T20:15:35Z"
+        },
+        {
+          "name": "Post Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-11-22T20:15:35Z",
+          "completed_at": "2026-11-22T20:15:35Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-11-22T20:15:35Z",
+          "completed_at": "2026-11-22T20:15:35Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-11-22T20:15:35Z",
+          "completed_at": "2026-11-22T20:15:35Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-11-22T20:15:35Z",
+          "completed_at": "2026-11-22T20:15:35Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/aarshroongta1/namespace-ci-lab/check-runs/137339200027",
+      "labels": [
+        "namespace-profile-ci-lab"
+      ],
+      "runner_id": 14,
+      "runner_name": "nsc-runner-k53har4aif6qs",
+      "runner_group_id": 1,
+      "runner_group_name": "Default"
+    }
+  ]
+}

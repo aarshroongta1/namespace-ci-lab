@@ -9,3 +9,5 @@ All three configurations ran in one workflow dispatch, with the same source edit
 | [Namespace with Cache Volume](https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45062565507/job/137331519246) | 13s | 85s | 98s | 35.71s | 0s | 59/59 | 4,045 passed |
 
 The first comparison changes the runner while retaining actions/cache. The second changes to Namespace Cache Volumes on the same Namespace runner profile. The existing archive was populated on GitHub; the Cache Volume was populated by earlier Namespace builds. Restored data does not imply reusable compiler outputs: the runner-only migration hit just 3/59 calls. The reason for those mismatches was not isolated. Do not attribute the runner-only/volume gap solely to storage speed. One run per configuration, not a broad benchmark. No upstream PR was opened.
+
+Update: the previously unexplained compiler misses were traced to an extra LC_ALL environment variable on the Namespace runner. See [the diagnosis](INVESTIGATION.md) and [controlled fix verification](LOCALE_RESULTS.md).

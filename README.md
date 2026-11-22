@@ -1,39 +1,52 @@
-# pandas CI migration to Namespace
+# pandas CI on Namespace: diagnosed and fixed
 
 **[Open the interactive demo](https://www.aarshroongta.com/demo/namespace)**
 
-This experiment asks how quickly a contributor gets passing checks after a small pandas source edit, and separates changing the runner from adopting Namespace Cache Volumes.
+A pandas runner migration initially restored its cache but missed most compiler entries. I traced the mismatch to `LC_ALL`, verified a one-line fix, and reran the same source build and 4,045 groupby tests.
 
-The motivation comes from Namespace's [GitHub Actions product](https://namespace.so/github-actions) and its customer stories: [Framer](https://namespace.so/customers/framer) focuses on keeping CI short enough to preserve developer focus, while [DuckDB](https://namespace.so/customers/duckdb) measures pull-request validation time and values visibility into bottlenecks.
+| Configuration | Dispatch to passing checks | Source build | Compiler-cache hits |
+|---|---:|---:|---:|
+| GitHub | 126s | 34.81s | 59/59 |
+| Namespace unchanged | 225s | 157.18s | 3/59 |
+| Namespace with LC_ALL unset | 80s | 24.38s | 59/59 |
 
-## One workflow, three configurations
+All three passed 4,045 tests, with 2 skipped. These are three jobs from one shared dispatch, using the same original archive, source edit, compiler, dependency lockfile, build/test commands, and 4-vCPU/16-GB Linux shape.
 
-Each configuration built the same pinned pandas source and ran the same 4,045 groupby tests. All passed, with 2 skipped. The build/test commands, dependency lockfile, two compiler workers, two pytest workers, and 4-vCPU/16-GB Linux shape stayed the same.
+## What was wrong
 
-| Configuration | Dispatch to successful completion | Compiler-cache hits |
-|---|---:|---:|
-| GitHub with its existing archive | 142s | 59/59 |
-| Namespace runner with the same archive | 248s | 3/59 |
-| Namespace with a populated Cache Volume | 98s | 59/59 |
+GitHub had `LANG=C.UTF-8` with `LC_ALL` unset. The Namespace runner used here also had `LC_ALL=C.UTF-8`. Ccache hashes locale variables, so the extra field changed the key despite the same effective locale.
 
-[Results and job links](MIGRATION_RESULTS.md) · [Workflow](.github/workflows/pandas-migration.yml) · [Raw evidence](results/pandas-migration/)
+Compiler/header manifests checked matched. The representative ccache COMMON and DIRECT input text becomes identical after removing the extra `LC_ALL` field. Unsetting it then restored all 59 cacheable calls from the same immutable GitHub archive.
 
-## Findings
+```sh
+env -u LC_ALL python3 scripts/measure_pandas.py
+```
 
-The runner-only migration passed without changing the build or tests. Its restored archive, however, mostly failed to produce compiler-cache hits and the job recompiled native code. I did not isolate why those entries did not match.
+The slow result was a migration environment mismatch, not evidence of slow Namespace compute. A cache archive restoring successfully did not establish effective compiler-cache reuse.
 
-With a Cache Volume already populated by previous Namespace builds, the checks completed 44 seconds sooner than the GitHub baseline. Both cases hit all 59 cacheable compiler calls. The difference includes cache handling, runner startup, checkout, and tool installation.
+## Evidence and verification
 
-A restored cache and an effective compiler cache are different things. The demo exposes compiler hit counts alongside the time to passing checks and shows the runner and cache workflow changes separately.
+- [Diagnosis and suggestion for Namespace](INVESTIGATION.md)
+- [Controlled timing results and CI job links](LOCALE_RESULTS.md)
+- [Ccache input comparison](results/cache-diagnosis/comparison.txt)
+- [Diagnostic workflow](.github/workflows/cache-diagnosis.yml)
+- [Fix-verification workflow](.github/workflows/pandas-locale.yml)
+- [Compiler-cache regression check](scripts/assert_compiler_reuse.py), which rejects the unchanged 3/59 result and accepts the fixed 59/59 result
+
+## Product feedback
+
+Document this ccache migration case, including `LANG` and `LC_ALL`. For the Ubuntu runner used here, check whether the default locale environment can match GitHub's. Otherwise include the normalization step when bringing an existing compiler cache. The fix retains ccache validation; it does not ignore cache inputs.
+
+This targets the customer outcome emphasized in [Framer's CI story](https://namespace.so/customers/framer) and [DuckDB's PR-validation story](https://namespace.so/customers/duckdb): shorter developer feedback loops while retaining GitHub Actions.
 
 ## Scope
 
-One trial per configuration, launched from one workflow dispatch, on different underlying hardware. This is one bounded contributor job, not pandas' complete CI matrix. The volume was warmed on Namespace; the archive was warmed on GitHub. The 248s-to-98s comparison is therefore not a pure storage-speed comparison. No cost, concurrency, or reliability conclusions are drawn.
+One bounded pandas contributor job, not its full upstream CI matrix. The same small Python helper rename was applied to each checkout. Two compiler processes and two pytest workers were used. Every runner, checkout, environment prefix, and build directory was fresh; only cached data persisted.
 
-Each runner, environment prefix and build directory was fresh. Only cached packages and compiler outputs persisted. Timelines combine measured command durations with GitHub timestamps, including dispatch/scheduling and post-job work.
+One timing trial per configuration on different underlying hardware. Compiler-input evidence, a reproduced negative control, and full hit restoration verify the cause. Timing differences also include startup, checkout, installation, and post-job work. Diagnostic logging was disabled in the verification timing run.
 
-The source edit is a behavior-preserving helper rename in `GroupBy.prod`; it does not change native code. No upstream PR was opened. Earlier cold/warm trials are retained in [PANDAS_RESULTS.md](PANDAS_RESULTS.md) and `results/pandas/` as preliminary evidence.
+Earlier migration and Cache Volume trials remain in [MIGRATION_RESULTS.md](MIGRATION_RESULTS.md), [PANDAS_RESULTS.md](PANDAS_RESULTS.md), and the results directory. The locale investigation resolves the previously unexplained runner-only compiler misses. No upstream PR, issue, or external message was sent.
 
-## Demo source
+## Demo
 
-The buildless UI is in [demo/](demo/). `scripts/collect_migration.py RUN_ID` collects the job evidence and exports `demo/migration.json`. Portfolio deployment copies the files to `public/namespace-ci/` and serves `/demo/namespace`.
+The buildless UI is in `demo/`, copied to the portfolio's `public/namespace-ci/` directory. `scripts/collect_locale_verification.py RUN_ID` collects evidence and exports `demo/verification.json`. The page replays recorded results and makes no live CI requests.

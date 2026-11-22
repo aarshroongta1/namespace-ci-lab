@@ -1,0 +1,62 @@
+=== COMMON ===
+4
+### ext
+i
+### cc_mtime
+2173144
+1790302720000000000
+### cc_name
+x86_64-conda-linux-gnu-cc
+### LANG
+C.UTF-8
+=== DIRECT MODE ===
+### cache entry version
+1
+### result version
+0
+### manifest version
+1
+### arg
+-fvisibility=hidden
+### arg
+-Wall
+### arg
+-Winvalid-pch
+### arg
+-Wextra
+### arg
+-std=c17
+### arg
+-O3
+### arg
+-fPIC
+### arg
+-Ipandas/_libs/tslibs/base.cpython-312-x86_64-linux-gnu.so.p
+### arg
+-Ipandas/_libs/tslibs
+### arg
+-I../../pandas/_libs/tslibs
+### arg
+-I../../.pixi/envs/py312/lib/python3.12/site-packages/numpy/_core/include
+### arg
+-I../../pandas/_libs/include
+### arg
+-I../../.pixi/envs/py312/include/python3.12
+### arg
+-DNDEBUG
+### arg
+-D_FILE_OFFSET_BITS=64
+### arg
+-DNPY_NO_DEPRECATED_API=0
+### arg
+-DCYTHON_USE_TYPE_SPECS=1
+### arg
+-DNPY_TARGET_VERSION=NPY_1_21_API_VERSION
+### arg
+-MD
+-MQ
+-MF
+### inputfile
+pandas/_libs/tslibs/base.cpython-312-x86_64-linux-gnu.so.p/base.pyx.c
+### sourcecode hash
+fc0dskqeh06avndf7oskv0j2b8nji718a

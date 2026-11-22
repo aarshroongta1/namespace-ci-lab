@@ -1,0 +1,80 @@
+{
+  "run_id": "45065516592",
+  "created_at": "2026-11-22T20:16:39Z",
+  "head_sha": "7e9d901f09a2351bde03643bfdebcacc44e66ea6",
+  "workflow_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45065516592",
+  "variants": [
+    {
+      "id": "github",
+      "title": "GitHub",
+      "description": "Existing runner and archive cache",
+      "total": 126.0,
+      "job_seconds": 122.0,
+      "times": [
+        4.0,
+        53.0,
+        17.0,
+        2.42,
+        34.811,
+        9.912,
+        4.857
+      ],
+      "passed": 4045,
+      "skipped": 2,
+      "hits": 59,
+      "calls": 59,
+      "files": 87086,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45065516592/job/137340663437",
+      "prefix": "github-edited",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/locale-verification/github/"
+    },
+    {
+      "id": "namespace-default",
+      "title": "Namespace default",
+      "description": "LC_ALL=C.UTF-8; original archive",
+      "total": 225.0,
+      "job_seconds": 213.0,
+      "times": [
+        12.0,
+        22.0,
+        21.0,
+        1.282,
+        157.181,
+        7.556,
+        3.981
+      ],
+      "passed": 4045,
+      "skipped": 2,
+      "hits": 3,
+      "calls": 59,
+      "files": 87086,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45065516592/job/137340663345",
+      "prefix": "namespace-default-edited",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/locale-verification/namespace-default/"
+    },
+    {
+      "id": "namespace-fixed",
+      "title": "Namespace fixed",
+      "description": "LC_ALL unset; same archive and commands",
+      "total": 80.0,
+      "job_seconds": 77.0,
+      "times": [
+        3.0,
+        20.0,
+        20.0,
+        1.191,
+        24.377,
+        6.92,
+        4.512
+      ],
+      "passed": 4045,
+      "skipped": 2,
+      "hits": 59,
+      "calls": 59,
+      "files": 87086,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45065516592/job/137340663130",
+      "prefix": "namespace-fixed-edited",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/locale-verification/namespace-fixed/"
+    }
+  ]
+}

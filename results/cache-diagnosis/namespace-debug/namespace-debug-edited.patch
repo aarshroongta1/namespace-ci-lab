@@ -1,0 +1,20 @@
+diff --git a/pandas/core/groupby/groupby.py b/pandas/core/groupby/groupby.py
+index b67eadd6c9..b7dc0b6537 100644
+--- a/pandas/core/groupby/groupby.py
++++ b/pandas/core/groupby/groupby.py
+@@ -3008,13 +3008,13 @@ class GroupBy(BaseGroupBy[NDFrameT]):
+         """
+         min_count = validate_min_count(min_count)
+ 
+-        def prod_compat(obj: NDFrameT):
++        def product_compat(obj: NDFrameT):
+             # GH#18588: see min_compat below
+             return obj.prod(skipna=skipna)
+ 
+         return self._cython_agg_general(
+             "prod",
+-            alt=prod_compat,
++            alt=product_compat,
+             numeric_only=numeric_only,
+             min_count=min_count,
+             skipna=skipna,

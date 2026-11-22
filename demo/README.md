@@ -9,3 +9,5 @@ The four buildless files here are copied into the portfolio's `public/namespace-
 Replay runs on a 12-second compressed timescale. Pause, scrub, skip to the result, inspect stages, or choose a different scenario. Reduced-motion users see final results. There are no live CI requests or paid calls.
 
 The current page uses migration.json from the three-configuration workflow. Run `python3 scripts/collect_migration.py <run-id>` after that workflow completes to collect its evidence and export the replay. Earlier cold/warm experiments remain in data.json and the results directory.
+
+The current page presents the resolved locale investigation. `scripts/collect_locale_verification.py RUN_ID` produces `verification.json`; the older migration and cache data are preserved as earlier evidence.
