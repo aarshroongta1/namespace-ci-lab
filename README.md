@@ -1,5 +1,7 @@
 # A small pandas CI experiment on Namespace
 
+**[Open the interactive demo](https://www.aarshroongta.com/demo/namespace)** — replay the actual runs, inspect each stage, and explore the cache miss.
+
 I ran a pandas source build and **4,045 groupby tests** on GitHub and Namespace, using Linux runners with 4 vCPUs and about 16 GB RAM.
 
 **The interesting result: once both caches were populated, the builds took almost the same time (~32 seconds), but the whole CI jobs took 131 seconds on GitHub and 76 seconds on Namespace.** Cache transfer and other setup work mattered more than the difference in warm compilation time.

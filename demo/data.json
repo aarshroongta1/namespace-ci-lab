@@ -1,0 +1,170 @@
+{
+  "cold": {
+    "github": {
+      "provider": "github",
+      "total": 299.0,
+      "times": [
+        56.0,
+        0.0,
+        15.868,
+        202.277,
+        9.722,
+        15.133
+      ],
+      "files": 0,
+      "hits": 1,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45055495476",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/",
+      "prefix": "github-cold",
+      "passed": 4045,
+      "skipped": 2
+    },
+    "namespace": {
+      "provider": "namespace",
+      "total": 217.0,
+      "times": [
+        23.0,
+        0.0,
+        13.943,
+        169.895,
+        6.807,
+        3.355
+      ],
+      "files": 0,
+      "hits": 1,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45055498946",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/",
+      "prefix": "namespace-cold",
+      "passed": 4045,
+      "skipped": 2
+    }
+  },
+  "warm": {
+    "github": {
+      "provider": "github",
+      "total": 131.0,
+      "times": [
+        56.0,
+        23.0,
+        1.99,
+        32.973,
+        9.465,
+        7.572
+      ],
+      "files": 87086,
+      "hits": 59,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056009608",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/",
+      "prefix": "github-warm",
+      "passed": 4045,
+      "skipped": 2
+    },
+    "namespace": {
+      "provider": "namespace",
+      "total": 76.0,
+      "times": [
+        21.0,
+        0.0,
+        8.924,
+        32.085,
+        8.227,
+        5.764
+      ],
+      "files": 87088,
+      "hits": 59,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056383722",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/",
+      "prefix": "namespace-warm",
+      "passed": 4045,
+      "skipped": 2
+    }
+  },
+  "edited": {
+    "github": {
+      "provider": "github",
+      "total": 143.0,
+      "times": [
+        58.0,
+        26.0,
+        5.559,
+        36.072,
+        10.02,
+        7.349
+      ],
+      "files": 87086,
+      "hits": 59,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056240043",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/",
+      "prefix": "github-edited",
+      "passed": 4045,
+      "skipped": 2
+    },
+    "namespace": {
+      "provider": "namespace",
+      "total": 62.0,
+      "times": [
+        18.0,
+        0.0,
+        7.774,
+        24.22,
+        6.711,
+        5.295
+      ],
+      "files": 87088,
+      "hits": 59,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056617810",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/",
+      "prefix": "namespace-edited",
+      "passed": 4045,
+      "skipped": 2
+    }
+  },
+  "miss": {
+    "github": {
+      "provider": "github",
+      "total": 131.0,
+      "times": [
+        56.0,
+        23.0,
+        1.99,
+        32.973,
+        9.465,
+        7.572
+      ],
+      "files": 87086,
+      "hits": 59,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056009608",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/",
+      "prefix": "github-warm",
+      "passed": 4045,
+      "skipped": 2
+    },
+    "namespace": {
+      "provider": "namespace",
+      "total": 208.0,
+      "times": [
+        19.0,
+        0.0,
+        12.499,
+        166.446,
+        6.662,
+        3.393
+      ],
+      "files": 0,
+      "hits": 1,
+      "calls": 59,
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45055882874",
+      "logbase": "https://github.com/aarshroongta1/namespace-ci-lab/blob/main/results/pandas/cache-misses/45055882874/",
+      "prefix": "namespace-warm",
+      "passed": 4045,
+      "skipped": 2
+    }
+  }
+}
