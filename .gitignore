@@ -1,3 +1,6 @@
 upstream/
 __pycache__/
 cache-store/
+
+upstream-pandas/
+pandas-cache/
