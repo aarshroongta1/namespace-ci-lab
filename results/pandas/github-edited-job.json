@@ -1,0 +1,131 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-22T18:38:30Z",
+  "jobs": [
+    {
+      "completedAt": "2026-11-22T18:40:57Z",
+      "conclusion": "success",
+      "databaseId": 137311993125,
+      "name": "ci",
+      "startedAt": "2026-11-22T18:38:34Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-22T18:38:38Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-22T18:38:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:38:41Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "startedAt": "2026-11-22T18:38:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:39:04Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 3,
+          "startedAt": "2026-11-22T18:38:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:39:32Z",
+          "conclusion": "success",
+          "name": "Install compiler cache",
+          "number": 4,
+          "startedAt": "2026-11-22T18:39:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:39:32Z",
+          "conclusion": "success",
+          "name": "Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+          "number": 5,
+          "startedAt": "2026-11-22T18:39:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:39:58Z",
+          "conclusion": "success",
+          "name": "Restore GitHub caches",
+          "number": 6,
+          "startedAt": "2026-11-22T18:39:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:39:58Z",
+          "conclusion": "skipped",
+          "name": "Attach Namespace caches",
+          "number": 7,
+          "startedAt": "2026-11-22T18:39:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:40:52Z",
+          "conclusion": "success",
+          "name": "Measure environment, source build, and groupby tests",
+          "number": 8,
+          "startedAt": "2026-11-22T18:39:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:40:54Z",
+          "conclusion": "success",
+          "name": "Preserve evidence",
+          "number": 9,
+          "startedAt": "2026-11-22T18:40:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:40:54Z",
+          "conclusion": "success",
+          "name": "Post Restore GitHub caches",
+          "number": 15,
+          "startedAt": "2026-11-22T18:40:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:40:54Z",
+          "conclusion": "success",
+          "name": "Post Run prefix-dev/setup-pixi@9936258fee697aff89b3fed6ca1f80a382ef694e",
+          "number": 16,
+          "startedAt": "2026-11-22T18:40:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:40:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 17,
+          "startedAt": "2026-11-22T18:40:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:40:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 18,
+          "startedAt": "2026-11-22T18:40:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-22T18:40:54Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 19,
+          "startedAt": "2026-11-22T18:40:54Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056240043/job/137311993125"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056240043"
+}

@@ -1,0 +1,21 @@
+Cache directory:    /home/runner/work/namespace-ci-lab/namespace-ci-lab/pandas-cache/pandas-3/ccache
+Config file:        /home/runner/work/namespace-ci-lab/namespace-ci-lab/pandas-cache/pandas-3/ccache/ccache.conf
+System config file: /etc/ccache.conf
+Stats updated:      Sun Nov 22 18:41:27 2026
+Cacheable calls:     59 /  61 (96.72%)
+  Hits:              59 /  59 (100.0%)
+    Direct:          59 /  59 (100.0%)
+    Preprocessed:     0 /  59 ( 0.00%)
+  Misses:             0 /  59 ( 0.00%)
+Uncacheable calls:    2 /  61 ( 3.28%)
+  No input file:      2 /   2 (100.0%)
+Successful lookups:
+  Direct:            59 /  59 (100.0%)
+  Preprocessed:       0
+Local storage:
+  Cache size (GB):  0.0 / 2.0 ( 0.39%)
+  Files:            117
+  Hits:              59 /  59 (100.0%)
+  Misses:             0 /  59 ( 0.00%)
+  Reads:            118
+  Writes:             0

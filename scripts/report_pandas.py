@@ -11,7 +11,8 @@ rows = []
 def duration(start, end):
     return (datetime.fromisoformat(end.replace('Z', '+00:00')) - datetime.fromisoformat(start.replace('Z', '+00:00'))).total_seconds()
 
-for path in folder.glob('*.json'):
+paths = list(folder.glob('*.json')) + list((folder / 'cache-misses').glob('*/*.json'))
+for path in paths:
     data = json.loads(path.read_text())
     if 'steps' not in data:
         continue
@@ -19,23 +20,26 @@ for path in folder.glob('*.json'):
     if len(steps) != 3 or any(s['exit_code'] != 0 for s in steps.values()):
         continue
     prefix = path.stem
-    job = json.loads((folder / f'{prefix}-job.json').read_text())['jobs'][0]
+    job = json.loads((path.parent / f'{prefix}-job.json').read_text())['jobs'][0]
     caching = [s for s in job['steps'] if s['name'] in ['Restore GitHub caches', 'Attach Namespace caches'] and s['conclusion'] == 'success']
     cache_seconds = sum(duration(s['startedAt'], s['completedAt']) for s in caching)
-    junit = ElementTree.parse(folder / f'{prefix}-junit.xml')
+    junit = ElementTree.parse(path.parent / f'{prefix}-junit.xml')
     suites = list(junit.getroot().iter('testsuite'))
     tests = sum(int(s.attrib.get('tests', 0)) for s in suites)
     failures = sum(int(s.attrib.get('failures', 0)) + int(s.attrib.get('errors', 0)) for s in suites)
     skipped = sum(int(s.attrib.get('skipped', 0)) for s in suites)
-    row = [data['provider'], data['phase'],
+    phase_label = data['phase']
+    if data['phase'] != 'cold' and not data['cache_files_before']:
+        phase_label += ' requested; cache MISS'
+    row = [data['provider'], phase_label,
            *[f"{steps[s]['seconds']:.2f}" for s in ['environment', 'build', 'unit']],
            f"{cache_seconds:.0f}", f"{duration(job['startedAt'], job['completedAt']):.0f}",
            f'{tests-skipped-failures} passed / {skipped} skipped', f"[run]({data['run_url']})"]
-    rows.append((data['provider'], ['cold', 'warm', 'edited'].index(data['phase']), row))
+    rows.append((data['provider'], ['cold', 'warm', 'edited'].index(data['phase']), job['startedAt'], row))
 
 table = '| Runner | Phase | Environment (s) | Build (s) | Tests (s) | Cache attach/restore (s) | Whole job (s) | Test result | Evidence |\n'
 table += '|---|---|---:|---:|---:|---:|---:|---|---|\n'
-table += '\n'.join('| '+' | '.join(row)+' |' for _, _, row in sorted(rows))
+table += '\n'.join('| '+' | '.join(row)+' |' for _, _, _, row in sorted(rows))
 text = '# pandas: measured CI results\n\n' + table + '\n\n'
 text += 'Only successful trials appear in this table. Raw evidence is in [results/pandas](results/pandas/). Failed setup attempts, if downloaded, are preserved separately.\n\n'
 text += 'Whole-job time includes setup, package installation, evidence upload and post-job cache handling; it is not just build time. Cache times come from GitHub step timestamps at one-second resolution. These are individual trials, not a statistical benchmark. The edited phase is a behavior-preserving Python helper rename, not a Cython or C++ change.\n'

@@ -1,0 +1,36 @@
+bringing up nodes...
+bringing up nodes...
+
+........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................s................................................................s.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+============================= slowest 30 durations =============================
+0.47s call     pandas/tests/groupby/test_reductions.py::test_ops_general[sem-scipy_sem]
+0.05s call     pandas/tests/groupby/test_groupby.py::test_empty_groupby[True-sum-apply-Int64-keys1-columns1]
+0.05s call     pandas/tests/groupby/test_reductions.py::test_multifunc_skipna[True-min-values28-datetime64[ns]-datetime64[ns]]
+0.03s call     pandas/tests/groupby/test_groupby.py::test_shift_bfill_ffill_tz['dateutil/US/Pacific'-shift-expected0]
+0.03s call     pandas/tests/groupby/test_groupby.py::test_empty_groupby[True-min-apply-str-keys0-C]
+0.03s call     pandas/tests/groupby/test_reductions.py::test_min_max_skipna_false_string_dtypes[str-min]
+0.03s call     pandas/tests/groupby/test_groupby.py::test_groupby_multiindex_not_lexsorted[True]
+0.02s call     pandas/tests/groupby/test_groupby.py::test_groupby_multiindex_not_lexsorted[False]
+0.02s call     pandas/tests/groupby/test_groupby.py::test_groupby_selection_other_methods
+0.01s call     pandas/tests/groupby/test_reductions.py::test_groupby_min_max_nullable[Float64]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_attr_wrapper
+0.01s call     pandas/tests/groupby/test_groupby.py::test_set_group_name[grouper1]
+0.01s call     pandas/tests/groupby/test_reductions.py::test_cython_median
+0.01s call     pandas/tests/groupby/test_groupby.py::test_indices_concatenation_order
+0.01s call     pandas/tests/groupby/test_groupby.py::test_empty_groupby[True-min-attr-bool-keys0-columns1]
+0.01s call     pandas/tests/groupby/test_reductions.py::test_basic_aggregations[int64]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_series_groupby_as_index_false_keys[val-index7-kwargs7]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_groupby_selection_with_methods[describe]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_empty_groupby[True-min-agg-period-keys1-C]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_groupby_multiple_columns[<lambda>0]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_groupby_groups_in_BaseGrouper
+0.01s call     pandas/tests/groupby/test_groupby.py::test_as_index_series_return_frame
+0.01s call     pandas/tests/groupby/test_groupby.py::test_groupby_multiple_columns[<lambda>1]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_frame_groupby
+0.01s call     pandas/tests/groupby/test_reductions.py::test_max_min_non_numeric
+0.01s call     pandas/tests/groupby/test_groupby.py::test_int32_overflow
+0.01s call     pandas/tests/groupby/test_groupby.py::test_series_groupby_as_index_false_keys[val-None-kwargs2]
+0.01s call     pandas/tests/groupby/test_reductions.py::test_groupby_min_max_nullable[boolean]
+0.01s call     pandas/tests/groupby/test_groupby.py::test_groupby_reindex_inside_function
+0.01s call     pandas/tests/groupby/test_reductions.py::test_nunique
+4045 passed, 2 skipped in 6.29s

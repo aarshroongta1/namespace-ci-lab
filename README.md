@@ -1,50 +1,39 @@
-# pandas CI on Namespace
+# A small pandas CI experiment on Namespace
 
-A small, reproducible experiment: **how much of a pandas contributor's build-and-test loop can persistent caches remove?**
+I ran a pandas source build and **4,045 groupby tests** on GitHub and Namespace, using Linux runners with 4 vCPUs and about 16 GB RAM.
 
-**Status:** GitHub baseline running. Namespace measurements pending runner connection. No Namespace speedup is claimed yet.
+**The interesting result: once both caches were populated, the builds took almost the same time (~32 seconds), but the whole CI jobs took 131 seconds on GitHub and 76 seconds on Namespace.** Cache transfer and other setup work mattered more than the difference in warm compilation time.
 
-## Why pandas
+| Measured step, with populated caches | GitHub | Namespace |
+|---|---:|---:|
+| Source build | 32.97 s | 32.09 s |
+| Compiler-cache hits | 59 / 59 | 59 / 59 |
+| Dependency/compiler cache restore or attach | 23 s | <1 s |
+| Whole CI job | 131 s | 76 s |
 
-pandas is a widely used Python library with Python, Cython, and C/C++ sources. Its CI builds pandas from source in a locked Pixi environment and runs pytest. This experiment follows that structure, narrowing the tests to groupby reductions and general groupby behavior so the work fits in one sitting.
+Both runs passed **4,045 tests**, with 2 skipped. [GitHub run](https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056009608) · [Namespace run](https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45056383722).
 
-## The experiment
+![Measured pandas CI times, including setup and cache overhead](results/pandas/timings.png)
 
-Each phase starts on a fresh Linux x86_64 runner, with a fresh source checkout and environment prefix:
+## What surprised me
 
-| Phase | Source | Reused data |
-|---|---|---|
-| Cold | Pinned upstream revision | Empty experiment cache |
-| Warm | Identical revision | Downloaded Pixi packages and ccache compiler outputs |
-| Edited | Rename a local helper in `GroupBy.prod` | Same caches; fresh build directory |
+The first repeated Namespace run passed its tests but started with **zero cached files**. It took 208 seconds; the later run with a populated cache took 76 seconds. Calling the second run “warm” would have given the wrong conclusion.
 
-The edit renames `prod_compat` to `product_compat` without changing behavior. It is a small Python refactor, **not a native-source edit or a bug fix**. Its patch is preserved with the run evidence. Native build directories, installed environments, and test results are never cached.
+I checked that the runs used the same profile, cache tag, and write mode. Namespace [documents more frequent cache misses during onboarding](https://namespace.so/docs/architecture/storage/cache-volumes#cache-volume-onboarding), when a job can land on a node without the cached data. That is consistent with this observation; I did not inspect the private generation lineage to prove its specific placement cause.
 
-Both providers run the same pinned pandas source and Pixi lockfile, the same Python 3.12 environment, two compiler processes, and two pytest workers. GitHub stores the experiment cache with `actions/cache`; Namespace attaches it with `nscloud-cache-action` to a cache-enabled profile. This compares realistic caching configurations, not hardware in isolation.
+I added `fail-on-cache-miss: true` for non-cold trials and checked the file count and ccache statistics. The next warm trial passed those checks and hit all 59 cacheable compiler calls.
 
-## Results and evidence
+**Small product suggestion:** surface “cache attached, but no reusable data” and the onboarding explanation prominently in the job summary. The action already logs the miss and links to the docs; a visible summary would make it easier for a first-time user to distinguish attaching a volume from benefiting from a warm cache.
 
-Pandas results will appear here after successful runs. Raw logs, compiler-cache statistics, package versions, JUnit test results, patches, and JSON timings live in [`results/pandas/`](results/pandas/) and in each run's artifact.
+## What I actually ran
 
-- [Run the experiment / inspect Actions](https://github.com/aarshroongta1/namespace-ci-lab/actions/workflows/pandas.yml)
-- [Workflow](.github/workflows/pandas.yml)
-- [Measurement script](scripts/measure_pandas.py)
-- [Pinned pandas source](https://github.com/pandas-dev/pandas/tree/717bcd3eda554a0b2e826889f9e30efbd88f00cd)
-- [Upstream CI](https://github.com/pandas-dev/pandas/blob/717bcd3eda554a0b2e826889f9e30efbd88f00cd/.github/workflows/unit-tests.yml)
-- [Upstream build task](https://github.com/pandas-dev/pandas/blob/717bcd3eda554a0b2e826889f9e30efbd88f00cd/pixi.toml)
+- A pinned pandas revision, its existing locked Pixi `py312` environment, and an editable Meson source build.
+- Two existing groupby test files, with two compiler processes and two pytest workers on both providers.
+- Fresh runners, source checkouts, environment prefixes and build directories; only downloaded packages and ccache compiler outputs persisted.
+- Cold and populated-cache runs on both providers, plus a small behavior-preserving Python helper rename as a follow-up (143 seconds on GitHub, 62 seconds on Namespace, with all 59 cacheable compiler calls hitting on both).
 
-## What counts as a useful finding
+This is a small engagement experiment, **not a general performance benchmark**: one measured run per condition, different underlying hardware, and the full pandas CI matrix was not run. Whole-job times include checkout, apt setup, uploads and post-job work. For example, installing ccache took 24 seconds on the warm GitHub job versus 4 seconds on Namespace; the entire 55-second gap should not be attributed to cache attachment alone.
 
-A faster warm build is only part of the story. We report environment creation, compilation, tests, cache attachment/transfer, and whole-job duration separately. A cache hit that costs more to restore than it saves is relevant feedback too. We will inspect ccache hit statistics before attributing an improvement to compiler caching.
+[Full results and run links](PANDAS_RESULTS.md) · [Workflow](.github/workflows/pandas.yml) · [Raw evidence](results/pandas/) · [Method and scope](METHODOLOGY.md) · [Pinned upstream CI](https://github.com/pandas-dev/pandas/blob/717bcd3eda554a0b2e826889f9e30efbd88f00cd/.github/workflows/unit-tests.yml)
 
-Namespace's documentation distinguishes changing the runner label from adopting cache volumes. This experiment explicitly configures persistent caches rather than assuming the runner migration does that automatically. Sources: [runner setup](https://namespace.so/docs/solutions/github-actions), [cache action](https://github.com/namespacelabs/nscloud-cache-action).
-
-## Scope and limitations
-
-This is one bounded contributor-workflow experiment, not the complete pandas CI matrix. It omits database service containers, coverage reporting, multiple Python versions, and unrelated tests. It keeps the upstream `py312` environment and underlying editable Meson build command, adds ccache, limits compiler parallelism, and selects two existing test files. Provider hardware differences are recorded, and one run per phase cannot establish statistically reliable performance claims. No package is published and no upstream repository is changed.
-
-## Reproduce
-
-Connect this repository to Namespace's GitHub app, then create a Linux AMD64 profile with cache volumes enabled. Dispatch `pandas.yml` for `github` or `namespace`, in order `cold`, `warm`, `edited`, waiting for each run to complete. Pass the actual Namespace profile label. Keep the cohort fixed across phases; use a new cohort for an independent cold trial. A cold run fails if it finds existing experiment cache files.
-
-Earlier Vite feasibility measurements remain in the root of `results/` and `RESULTS.md`. They are separate from the pandas experiment.
+[Method and reproduction details](METHODOLOGY.md) · [Short outreach draft](OUTREACH.md)

@@ -1,0 +1,6 @@
+ci	Attach Namespace caches	2026-11-22T18:35:08.6650069Z Found Namespace cross-invocation cache at /cache.
+ci	Attach Namespace caches	2026-11-22T18:35:08.6749045Z Using existing spacectl 0.12.3 at /nsc/powertoys/spacectl
+ci	Attach Namespace caches	2026-11-22T18:35:08.6996913Z Mounted 1 cache path.
+ci	Attach Namespace caches	2026-11-22T18:35:08.6997383Z Some cache paths missing: pandas-cache/pandas-3. Learn more about cache hits and misses: https://namespace.so/docs/architecture/storage/cache-volumes#cache-hits-and-misses
+ci	Attach Namespace caches	2026-11-22T18:35:08.6997748Z Total available cache space is 49G, and 6.6M have been used.
+ci	Measure environment, source build, and groupby tests	﻿2026-11-22T18:35:08.7066491Z ##[group]Run python3 scripts/measure_pandas.py

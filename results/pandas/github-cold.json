@@ -1,0 +1,30 @@
+{
+  "project": "pandas",
+  "provider": "github",
+  "phase": "cold",
+  "cohort": "pandas-3",
+  "run_url": "https://github.com/aarshroongta1/namespace-ci-lab/actions/runs/45055495476",
+  "source_sha": "717bcd3eda554a0b2e826889f9e30efbd88f00cd",
+  "cpu_count": 4,
+  "platform": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+  "memory": "MemTotal:       16078420 kB",
+  "cache_files_before": 0,
+  "steps": [
+    {
+      "name": "environment",
+      "seconds": 15.868,
+      "exit_code": 0
+    },
+    {
+      "name": "build",
+      "seconds": 202.277,
+      "exit_code": 0
+    },
+    {
+      "name": "unit",
+      "seconds": 9.722,
+      "exit_code": 0
+    }
+  ],
+  "cache_files_after": 87086
+}
