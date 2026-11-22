@@ -44,6 +44,8 @@ jobs:
           repository: pandas-dev/pandas
           ref: 717bcd3eda554a0b2e826889f9e30efbd88f00cd
           path: upstream-pandas
+          fetch-depth: 0
+          fetch-tags: true
           persist-credentials: false
       - name: Install compiler cache
         run: sudo apt-get update -qq && sudo apt-get install -y ccache
