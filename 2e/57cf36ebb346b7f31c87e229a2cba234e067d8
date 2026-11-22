@@ -1,0 +1,39 @@
+RESULTS.md
+  s_6cd6e415f326a5::t_7b77619085c654 6
+results/github-cold-job.json
+  s_8e27fbea316f4b::t_1452de53c6ed28 1
+results/github-warm.json
+  s_6cd6e415f326a5::t_7b77619085c654 1-29
+results/github-warm-install.log
+  s_6cd6e415f326a5::t_7b77619085c654 1-54
+results/github-warm-job.json
+  s_8e27fbea316f4b::t_1452de53c6ed28 1
+results/github-warm-build.log
+  s_6cd6e415f326a5::t_7b77619085c654 1-54
+results/github-warm-unit.log
+  s_6cd6e415f326a5::t_7b77619085c654 1-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2e57cf36ebb346b7f31c87e229a2cba234e067d8",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    },
+    "s_8e27fbea316f4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
