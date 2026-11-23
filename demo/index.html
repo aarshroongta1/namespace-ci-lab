@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Diagnosing a slow pandas CI migration to Namespace: an LC_ALL mismatch changed ccache keys. Unsetting it restored all compiler-cache hits and faster passing checks.">
+<meta name="description" content="A pandas CI comparison: GitHub in 126 seconds, Namespace in 80 seconds, with matching compiler-cache hits.">
 <meta name="theme-color" content="#ffffff"><title>pandas CI on Namespace | Aarsh Roongta</title>
 <link rel="stylesheet" href="/namespace-ci/styles.css"><script src="/namespace-ci/app.js" defer></script>
 </head>
@@ -20,16 +20,10 @@
 <p class="replay-note">All runs: 4,045 passed, 2 skipped. Replay uses recorded timings.</p>
 </div>
 </section>
-<section class="changes" aria-labelledby="changes-heading">
-<h2 id="changes-heading">Why the first Namespace run was slow</h2>
-<p>GitHub left <code>LC_ALL</code> unset. Namespace set it to <code>C.UTF-8</code>. That changed ccache’s keys: only 3 of 59 compiled objects were reused.</p>
-<p>Unsetting it restored all 59 cache hits. The job finished in 80s, versus 126s on GitHub.</p>
-<pre class="fix-command">env -u LC_ALL python3 scripts/measure_pandas.py</pre>
-</section>
 <details class="method"><summary>Method and evidence</summary><div>
 <p>pandas <code>717bcd3</code>, Python 3.12, locked Pixi environment, editable Meson build. Two compiler processes and two test workers. Each job used a fresh runner and the same GitHub cache archive.</p>
 <p>One trial per configuration. Timings include setup and do not isolate hardware performance. This compares runners using an archive cache; it does not measure Namespace Cache Volumes.</p>
-<p>Ccache debug inputs matched after removing <code>LC_ALL</code>. Compiler and checked header manifests also matched. <a href="https://ccache.dev/manual/4.9.1.html#config_sloppiness" target="_blank" rel="noopener">Ccache hashes locale variables.</a></p>
+<p>The Namespace run used <code>env -u LC_ALL</code> to match GitHub’s locale environment and reuse the same compiler cache. Both runs reused 59 of 59 compiled objects. Ccache debug inputs and checked compiler/header manifests matched. <a href="https://ccache.dev/manual/4.9.1.html#config_sloppiness" target="_blank" rel="noopener">Ccache hashes locale variables.</a></p>
 <p><a href="https://github.com/aarshroongta1/namespace-ci-lab/blob/main/.github/workflows/pandas-locale.yml" target="_blank" rel="noopener">Workflow</a><a href="https://github.com/aarshroongta1/namespace-ci-lab/blob/main/LOCALE_RESULTS.md" target="_blank" rel="noopener">Results</a><a href="https://github.com/aarshroongta1/namespace-ci-lab/blob/main/INVESTIGATION.md" target="_blank" rel="noopener">Cache diagnosis</a></p>
 </div></details>
 <footer>Aarsh Roongta, November 2026</footer>
