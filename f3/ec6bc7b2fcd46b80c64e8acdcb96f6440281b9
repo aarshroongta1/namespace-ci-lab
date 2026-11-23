@@ -1,0 +1,23 @@
+demo/app.js
+  s_6cd6e415f326a5::t_493ecae1a0fd4a 41
+demo/index.html
+  s_6cd6e415f326a5::t_43cde33213d479 5,26
+demo/styles.css
+  s_6cd6e415f326a5::t_b060faffd93dd4 14-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f3ec6bc7b2fcd46b80c64e8acdcb96f6440281b9",
+  "prompts": {},
+  "sessions": {
+    "s_6cd6e415f326a5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a20473-980f-7e62-b301-e962f255883b",
+        "model": "unknown"
+      },
+      "human_author": "Aarsh Roongta <aarshroongta1@gmail.com>"
+    }
+  }
+}
