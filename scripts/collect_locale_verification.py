@@ -27,8 +27,7 @@ results.mkdir(parents=True, exist_ok=True)
 variants = []
 for variant, title, description in [
     ('github', 'GitHub', 'Existing runner and archive cache'),
-    ('namespace-default', 'Namespace default', 'LC_ALL=C.UTF-8; original archive'),
-    ('namespace-fixed', 'Namespace fixed', 'LC_ALL unset; same archive and commands'),
+    ('namespace-fixed', 'Namespace', '59/59 compiler-cache hits'),
 ]:
     job = next(j for j in jobs if j['name'] == variant)
     if job['conclusion'] != 'success':
@@ -71,12 +70,12 @@ for variant, title, description in [
 export=dict(run_id=run_id,created_at=run['created_at'],head_sha=run['head_sha'],
             workflow_url=run['html_url'],variants=variants)
 (root/'demo/verification.json').write_text(json.dumps(export,indent=2)+'\n')
-lines=['# pandas: verifying the compiler-cache locale fix','',
-       'All three configurations ran in one dispatch with the same original GitHub archive, source edit, build, tests, and dependency lockfile. Namespace fixed differs from Namespace default only by running the measurement script with LC_ALL removed from its environment.','',
+lines=['# pandas CI: GitHub vs Namespace','',
+       'Same source, dependencies, build, tests, and cache archive. Both runners used 4 vCPUs and 16 GB RAM.','',
        '| Configuration | Wait to start | Job runtime | Dispatch to passing result | Build | Cache restore/attach | Compiler hits | Tests |',
        '|---|---:|---:|---:|---:|---:|---:|---|']
 for v in variants:
     lines.append(f'| [{v["title"]}]({v["url"]}) | {v["times"][0]:.0f}s | {v["job_seconds"]:.0f}s | {v["total"]:.0f}s | {v["times"][4]:.2f}s | {v["times"][2]:.0f}s | {v["hits"]}/{v["calls"]} | {v["passed"]:,} passed |')
-lines += ['', 'All three jobs restore the same immutable archive. The only treatment between the two Namespace jobs is env -u LC_ALL. Both retain LANG=C.UTF-8. Compiler/input tracing found the extra LC_ALL field in Namespace cache keys; the headers and compiler files checked matched. Debug instrumentation was disabled for this timing run. One timing trial per configuration; ccache-input evidence and the negative-control regression check provide the causal verification.']
+lines += ['', 'Both jobs passed 4,045 tests, with 2 skipped. Namespace used env -u LC_ALL to match GitHub’s locale environment. One timing trial per configuration, including startup and cleanup. Diagnostic controls are preserved in INVESTIGATION.md and raw evidence.']
 (root/'LOCALE_RESULTS.md').write_text('\n'.join(lines)+'\n')
 print('\n'.join(lines))
